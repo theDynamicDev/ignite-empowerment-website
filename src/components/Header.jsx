@@ -5,17 +5,20 @@ import {BsFillInfoSquareFill} from 'react-icons/bs'
 import LOGO from '../../public/ignite-full-logo.png'
 import Image from 'next/image'
 //going to animate log to stager in the image first then the words come from left. framer motion
-const background = 'https://cdn.midjourney.com/8918741c-b160-40e0-82d4-70433710f4e3/0_1.png'
+
 function Header() {
+  const gradientStyle = {
+    background: "linear-gradient(to bottom, #ffffff,rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5), rgba(253, 253, 254, 0))"
+  };
   return (
-    <div className="flex justify-evenly sm:mx-auto max-w-6xl mx-2 items-start py-3" >
-       <div className="flex w-38 min-w-min "> 
+    <div className="flex justify-around sm:mx-auto max-w-6xl mx-2 items-start pb-5 z-50" style={gradientStyle}>
+       <div className="flex w-[50%] min-w-min -my-12"> 
      <Link href="/">
        <Image
           src={LOGO}
           alt="ignite logo"
   
-          className='flex  h-48 w-52 text-lg my-auto -mt-12  '
+          className='flex  h-[100%] w-[100%]   '
      /> 
      </Link>
       </div>
