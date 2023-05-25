@@ -1,8 +1,9 @@
+
 export default function arrayCeil(arr, number) {
     const sorted = arr.sort((a, b) => a - b);
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > number) {
-            console.log(sorted[i]);
+            console.log("HERE IS WHAT IT SORTED" + sorted[i]);
             return sorted[i];
         }
     }

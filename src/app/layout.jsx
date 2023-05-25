@@ -1,9 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Header from '@/components/Header'
-import Hero from '@/components/Hero'
+import NavBar from './components/NavBar'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata = {
   title: 'Ignite Empowerment Website',
@@ -12,11 +11,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" >
-      
-      <body className={`${inter.className} `} >
-        <Header />
-        <Hero />
+    <html lang="en" className="  w-screen h-screen sm:bg-white bg-black">
+  
+       
+  
+      <body className="  " >
+     
+      <header className={`flex justify-center items-center `}>
+
+<NavBar />
+  </header>
+
+  <div className=" flex flex-col items-center ">
+
+        {children}
+        </div>
       </body>
     </html>
   )
