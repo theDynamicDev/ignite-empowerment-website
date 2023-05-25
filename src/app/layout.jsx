@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   
        
   
-      <body className="  " >
+      <body className="flex flex-col  " >
      
       <header className={`flex justify-center items-center `}>
 

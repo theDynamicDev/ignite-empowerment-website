@@ -24,7 +24,7 @@ function Navbar() {
   };
   return (
     
-    <div className= {`flex flex-row w-screen max-w-6xl justify-between h-32 mx-auto  items-center text-white hover:text-black z-50 bg-transparent px-2  hover:bg-white  `} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className= {`flex flex-row w-screen max-w-6xl justify-between h-32 mx-auto  items-center text-white hover:text-black z-50 bg-transparent px-2  `} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
      <div className="flex max-w-[200px] items-center"> 
      <AnimatedLogo />
       </div>
