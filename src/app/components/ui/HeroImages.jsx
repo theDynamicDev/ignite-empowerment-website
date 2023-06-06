@@ -39,6 +39,7 @@ const HeroImages = () => {
             fill
          
           />
+           <div className=" absolute object-cover bottom-0 w-screen left-32 -ml-32 h-1/2 bg-gradient-to-t from-black to-transparent " />
         </div>
       );
     }
