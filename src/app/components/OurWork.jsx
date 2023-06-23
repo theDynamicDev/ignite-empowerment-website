@@ -74,7 +74,7 @@ const OurWork = () => {
       animate={controls}
         
           key={index}
-          className={`relative   w-full mt-10 max-w-[360px] lg:object-cover md:max-w-xs lg:max-w-[220px] xl:max-w-[250px] 2xl:max-w-xs lg:-mx-1  h-96 py-2 -my-24 xl:mx-[5px]  rounded-md overflow-hidden shadow-lg shadow-black/40  bottom-10  `}
+          className={`relative w-full mt-10 max-w-[360px] lg:object-cover md:max-w-xs lg:max-w-[220px] xl:max-w-[250px] 2xl:max-w-xs lg:-mx-1  h-96 py-2 -my-24 xl:mx-[5px]  rounded-md overflow-hidden shadow-lg shadow-black/40  bottom-10  `}
         >
           <Image
             src={image.src}

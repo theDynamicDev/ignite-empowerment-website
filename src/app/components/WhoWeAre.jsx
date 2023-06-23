@@ -73,7 +73,7 @@ function WhoWeAre() {
                 textGradient: "45deg, $red700 -70%, $yellow600 30%, $green600 60%, $cyan500 100%",
               }}
               weight="bold"
-              className=" text-4xl justify-center flex flex-row md:justify-center text-center bottom-20  md:left-20  md:text-5xl text-white  md:items-center tracking-wide leading-10 indent-2 drop-shadow-lg md:shadow-gray shadow-white"
+              className=" text-4xl justify-center flex flex-row md:justify-center text-center bottom-20 lg:-top-20  md:left-20  md:text-5xl text-white  md:items-center tracking-wide leading-10 indent-2 drop-shadow-lg md:shadow-gray shadow-white"
              >
              
                <span className=''>Who </span> 

@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from 'react'
-
 import Link from 'next/link'
 import LOGOICON from '../../../public/images/logo-icon-darkshadow.png'
 import LOGOLIGHTWORDS from '../../../public/images/ignite_logo_light.png'
@@ -13,11 +12,20 @@ import {AiTwotoneHome} from 'react-icons/ai'
 import {BsFillInfoSquareFill} from 'react-icons/bs'
 import {RiMenu3Fill} from 'react-icons/ri'
 import NavDonateButton from './ui/NavDonateButton';
-
+import DropDownMenu from './DropDownMenu'
 //going to animate log to stager in the image first then the words come from left. framer motion
 
 function Navbar() {
   const [isHovered, setIsHovered] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false);
+  };
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -73,7 +81,7 @@ function Navbar() {
   };
   return (
     
-    <div className= {`flex flex-row w-screen max-w-6xl justify-between h-32 mx-auto  items-center text-white hover:text-black z-50 bg-transparent px-2  hover:bg-white  `} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className= {`flex flex-row w-screen max-w-6xl justify-between h-32 mx-auto  items-center text-white hover:text-black z-30 bg-transparent px-2  hover:bg-white  `} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
      <div className="flex max-w-[200px] items-center"> 
      <div className=" flex-auto   z-10" />
     
@@ -109,7 +117,7 @@ function Navbar() {
          <div />
       </div>
     
-      <div className={`flex relative items-start invisible md:visible h-24 z-10 font-bold leading-10 text-xl tracking-wider`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}> 
+      <div className={`flex relative items-start invisible sm:visible h-24 z-10 font-bold leading-10 text-xl tracking-wider`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}> 
     
       <MenuItem title="HOME" address="/" Icon={AiTwotoneHome}/>
      
@@ -120,7 +128,12 @@ function Navbar() {
       </div>
       {/*  Search */}
       <div className=" items-center  justify-between -right-10 ml-5 left-10 text-4xl flex flex-end z-50 md:invisible" >
-        {mobile ? <RiMenu3Fill/> : <NavDonateButton > Donate </NavDonateButton>
+        {mobile ?  <DropDownMenu 
+        isOpen={isMenuOpen} 
+        onToggleMenu={toggleMenu}
+        onMenuItemClick={handleMenuItemClick}
+      /> : 
+      <NavDonateButton > Donate </NavDonateButton>
 
         }
       

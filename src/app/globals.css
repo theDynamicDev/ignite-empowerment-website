@@ -15,8 +15,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
 body {
+  font-family: "Lenox Hill", sans-serif;
 
-    
+  font-size: 18px;
+ 
 }
