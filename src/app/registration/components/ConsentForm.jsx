@@ -1,10 +1,12 @@
 "use client";
 import React, { useState} from 'react';
 import  {useForm} from '@formspree/react';
-import SelectUSState from 'react-select-us-states';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 import "./form.css"
 const ChildForm = ({ index, onRemove }) => (
-    <div className='flex flex-col justify-between items-start  my-4 md:flex-row md:justify-end md:mt-8 md:items-end'>
+    <div className='flex flex-col justify-between items-start max-w-[600px] relative my-4 md:flex-row md:justify-end md:mt-8 md:items-end'>
         
         <div className=" md:flex md:flex-col md:mx-5">
         <h3 className="font-extralight">Child - {index + 1}</h3>
@@ -17,7 +19,10 @@ const ChildForm = ({ index, onRemove }) => (
       <label htmlFor={`childAge-${index}`} className="block text-sm font-bold my-2">Child Age</label>
       <input id={`childAge-${index}`} type="number" name={`childAge-${index}`} className="shadow appearance-none outline-none border focus:border-blue-500 focus:shadow-outline-blue rounded w-full max-w-[50px] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
   </div>
-      <button type="button" className="mt-3   max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => onRemove(index)}>Remove Child</button>
+  <div className="mt-3 max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline " onClick={() => onRemove(index)}>
+    <FontAwesomeIcon icon={faTrash} />
+  </div>
+      {/* <button type="button" className="mt-3   max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => onRemove(index)}>Remove Child</button> */}
     </div>
   );
 
@@ -59,10 +64,12 @@ export default function ConsentForm() {
   
     return (
       
-        <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="flex  px-7 flex-col justify-center h-full items-start md:items-center content-around w-full  lg:w-1/2">
-            <div className="flex flex-col md:flex-wrap justify-center w-full max-w-[800px] ">
-        <h2 className="form-titles font-bold text-xl mb-3">Programs of Interest</h2>
-        <div className="grid grid-flow-row grid-rows-3 gap-2 py-5 drop-shadow-sm  px-2 w-48 mb-5 font-medium rounded-lg container appearance-none outline-none border hover:border-blue-500 focus:shadow-outline-blue">
+        <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="flex  p-5 mt-5 pt-10 rounded-2xl flex-col justify-center h-full bg-cyan-100/70 items-start md:items-center relative content-around w-screen max-w-6xl  md:max-w-6xl">
+            <div className="flex flex-col md:flex-wrap justify-center w-full max-w-6xl ">
+                <div className= "md:justify-center  md:flex  md:flex-col md:items-center max-w-6xl container">
+        <h2 className="form-titles font-bold text-xl mb-3 md:flex">Programs of Interest</h2>
+        <div className= " ">
+        <div className="grid grid-flow-row grid-rows-3 gap-2 py-5 drop-shadow-sm  px-2 w-48 mb-5 font-medium rounded-lg appearance-none outline-none border hover:border-blue-500 focus:shadow-outline-blue">
         <div className=" px-2 rounded mr-3">
           <input type="checkbox" id="ignite" name="program" value="Ignite Institute"  className=" outline-none border focus:border-blue-500 focus:shadow-outline-blue drop-shadow-sm mr-1 "/>
           <label htmlFor="ignite">  Ignite Institute</label>
@@ -77,14 +84,16 @@ export default function ConsentForm() {
         </div>
 
         </div>
-     
-  
-        <h2 className="form-titles font-bold text-xl mb-4">Registrant Information</h2>
-        <div className="my-2 md:w-screen md:max-w-5xl md:flex-row md:flex md:justify-evenly md:relative md:items-start">
-        <div className="my-2 md:flex md:flex-col md:w-1/2 md:justify-between">
-            <div className='md:flex md:flex-row md:justify-between'>
-
-        <div className="my-2">
+        </div>
+        </div>
+      
+        <div className="my-2 md:w-full md:max-w-6xl md:flex-row md:flex md:justify-center md:relative  md:items-start">
+        
+        <div className="my-2 md:flex md:flex-col md:max-w-md md:w-screen md:justify-between">
+        <h2 className="form-titles font-bold text-xl mb-4 md:flex md:justify-start">Registrant Information</h2>
+            <div className='md:flex md:flex-row md:justify-between  md:max-w-2xl md:items-center'>
+            
+        <div className="my-2 md">
           <label htmlFor="firstName" className="block text-sm font-bold mb-2">First Name</label>
           <input id="firstName" type="text" name="firstName" required className=" outline-none focus:border-blue-500 focus:shadow-outline-blue shadow appearance-none border rounded w-full max-w-xs py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
@@ -94,7 +103,7 @@ export default function ConsentForm() {
         </div>
 
             </div>
-  <div className="my-2 md:flex md:flex-row md:justify-between">
+  <div className="my-2 md:flex md:flex-row md:justify-between ">
         <div className="my-4">
           <label htmlFor="emailAddress" className="block text-sm font-bold mb-2">Email Address</label>
           <input id="emailAddress" type="email" name="emailAddress" required className="shadow appearance-none outline-none border focus:border-blue-500 focus:shadow-outline-blue rounded w-full max-w-sm py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
@@ -108,7 +117,7 @@ export default function ConsentForm() {
         </div>
 
         
-        <div className=' md:flex md:justify-between flex-col md:w-1/2 md:items-start md:-mt-[50px] md:ml-12'>
+        <div className=' md:flex md:justify-between flex-col  md:items-start md:-mt-[0px] md:ml-4'>
         <h2 className=" form-titles font-bold text-xl mt-4 md:mt-0">Children</h2>
         {children.map((_, index) => (
           <ChildForm key={index} index={index}  onRemove={handleRemoveChild} />
@@ -120,18 +129,22 @@ export default function ConsentForm() {
 
         </div>
         </div>
-        <h2 className="font-bold text-xl my-4">Address</h2>
-        <div className="md:flex md:flex-col md:items-center md:w-screen md:relative max-w-3xl">
-        
-        <div className="mb-4">
+        <div className="w-screen md:flex md:flex-col md:items-center max-w-6xl ">
+
+            
+       
+        <div className="md:flex md:flex-col md:items-center md:w-screen  max-w-3xl">
+       
+        <div className="mb-4  ">
+        <h2 className="font-bold text-xl  md:justify-center relative md:flex md:flex-row  my-5">Address</h2>
           <label htmlFor="streetAddress" className="block text-sm  font-bold mb-2">Street Address</label>
-          <input id="streetAddress" type="text" name="streetAddress" required className="shadow max-w-xl appearance-none outline-none border focus:border-blue-500 focus:shadow-outline-blue rounded w-screen py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          <input id="streetAddress" type="text" name="streetAddress" required className="shadow max-w-md md:max-w-lg appearance-none outline-none border focus:border-blue-500 focus:shadow-outline-blue rounded w-screen py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
         <div className="mb-4">
           <label htmlFor="streetAddress" className="block text-sm  font-bold mb-2">Street Address 2</label>
-          <input id="streetAddress" type="text" name="streetAddress" required className="shadow max-w-xl appearance-none outline-none border focus:border-blue-500 focus:shadow-outline-blue rounded w-screen py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          <input id="streetAddress" type="text" name="streetAddress" required className="shadow max-w-md md:max-w-lg appearance-none outline-none border focus:border-blue-500 focus:shadow-outline-blue rounded w-screen py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
-<div className='flex flex-row'>
+<div className='flex flex-row w-screen max-w-md md:justify-start md:flex'>
 
 
         <div className="mb-4">
@@ -173,7 +186,24 @@ export default function ConsentForm() {
         </div>
 
 </div>
-<div className="flex relative md:my-5 justify-center">
+
+        </div>
+      
+        <div className="my-5 flex flex-col items-center max-w-6xl justify-center">
+            
+            <div className="flex flex-col justify-start items-center">
+            <h1 className="font-bold text-xl my-5"> Terms and Conditions </h1>
+            <p className="w-full bg-white/80  max-w-3xl p-5 rounded">
+            Attending an in-person or virtual Ignite Empowerment event or program, you maybe in an area of video, photography, and audio. By being a participant of the event or program you are consenting to video, photography, and audio recording, and its release, publication, or reproduction to be used for Ignite Empowerment’s marketing purpose, and advertising on website, social media, and printed material.
+            </p>
+                </div>
+                <div className=" p-2 my-5 rounded mr-3">
+          <input type="checkbox" required id="agree" name="program" value="agree"  className=" outline-none border focus:border-blue-500 focus:shadow-outline-blue drop-shadow-sm mr-1 "/>
+          <label htmlFor="agree">  I HAVE READ THE TERMS AND CONDITIONS AND I AGREE </label>
+        </div>
+            </div>
+       
+        <div className="flex relative md:mb-10 justify-center">
         <button type="submit" disabled={state.submitting} className="mt-3 max-w-xs w-full bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-3 rounded focus:outline-none focus:shadow-outline">
           {state.submitting ? 'Registering...' : 'Register'}
         </button>
