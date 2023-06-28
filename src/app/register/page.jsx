@@ -7,8 +7,8 @@ console.log("this is the project id from registration =  ", PROJECT_ID)
 function Registration({ pageProps }) {
     console.log("this is the page props from registration =  ", JSON.stringify({...pageProps}))
   return (
-    <div className='w-screen max-w-6xl relative  rounded-xl h-full '> 
-    <div className="flex flex-col justify-center items-center">
+    <div className='w-screen  md: md:flex md:flex-col md:items-center  mt-3 md:mt-10 rounded-xl h-full z-50'> 
+    <div className="flex flex-col justify-center items-center bg-gradient-to-t from-transparent -from-10% via-black via-50% to-transparent to-100% w-full bg-opacity-20 h-full ">
                 <Text
         css={{
           textGradient: "45deg, $red700 -70%, $yellow600 40%, $green600 100%",
