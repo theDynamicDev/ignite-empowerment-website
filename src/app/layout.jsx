@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="min-h-screen w-screen bg-gray-200">
+    <html lang="en" className="min-h-screen w-screen bg-gray-500">
       <Head>
         <script async src="https://js.stripe.com/v3/buy-button.js"></script>
       </Head>
