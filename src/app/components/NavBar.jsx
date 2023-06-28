@@ -88,7 +88,7 @@ function Navbar() {
         "text-white hover:bg-white hover:text-black hover:shadow",
         "transition duration-500",
         "md:fixed md:left-0 md:top-0",
-        scrollPosition > 0 && "text-black md:bg-white md:shadow"
+        scrollPosition > 0 && "md:bg-white md:text-black md:shadow"
       )}
     >
       <div
