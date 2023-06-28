@@ -12,9 +12,12 @@ import { AiTwotoneHome } from "react-icons/ai";
 import { BsFillInfoSquareFill } from "react-icons/bs";
 import NavDonateButton from "./ui/NavDonateButton";
 import DropDownMenu from "./DropDownMenu";
+import classNames from "../../lib/classNames";
+import useScrollPosition from "../../lib/hooks/useScrollPostion";
 //going to animate log to stager in the image first then the words come from left. framer motion
 
 function Navbar() {
+  const scrollPosition = useScrollPosition();
   const [isHovered, setIsHovered] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,7 +44,7 @@ function Navbar() {
   const [scrollY, setScrollY] = useState(0);
 
   function logit() {
-    setScrollY(window.pageYOffset);
+    setScrollY(window.scrollY);
     controls.start({
       rotate: scrollY / 0.5, // you can adjust the rate of rotation here
       transition: { duration: 0.5 },
@@ -80,73 +83,97 @@ function Navbar() {
   };
   return (
     <div
-      className={`flex flex-row w-screen max-w-6xl justify-between h-32 mx-auto  items-center text-white hover:text-black z-30 bg-transparent px-2  hover:bg-white/70 rounded `}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
-      <div className="flex max-w-[200px] items-center">
-        <div className=" flex-auto   z-10" />
-
-        <motion.div animate={controls} className="content">
-          <Link href="/">
-            <Image
-              src={isHovered ? LOGOICON : LOGODARKICON}
-              alt="ignite logo"
-              height={90}
-              width={90}
-              className=" min-w-[55px] min-h-[55px] scroll-animate-spin "
-            />
-          </Link>
-        </motion.div>
-
-        <motion.div
-          animate={{ x: 100 }}
-          transition={{ ease: "easeOut", duration: 1 }}>
-          <Link href="/">
-            <Image
-              src={isHovered ? LOGODARKWORDS : LOGOLIGHTWORDS}
-              alt="ignite logo words"
-              height={120}
-              width={175}
-              className="relative z-50 mt-.5 -left-24 bottom-0 invisible sm:visible  "
-            />
-          </Link>
-        </motion.div>
-        <div />
-      </div>
-
+      className={classNames(
+        "z-50 w-screen",
+        "text-white hover:bg-white hover:text-black hover:shadow",
+        "transition duration-500",
+        "md:fixed md:left-0 md:top-0",
+        scrollPosition > 0 && "text-black md:bg-white md:shadow"
+      )}
+    >
       <div
-        className={`flex relative items-start invisible sm:visible h-24 z-10 font-bold leading-10 text-xl tracking-wider`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}>
-        <MenuItem title="HOME" address="/" Icon={AiTwotoneHome} />
-        <MenuItem
-          title="EVENTS"
-          address="/events"
-          Icon={BsFillInfoSquareFill}
-        />
-        <MenuItem title="ABOUT" address="/about" Icon={BsFillInfoSquareFill} />
-        <MenuItem
-          title="VOLUNTEER"
-          address="/volunteer"
-          Icon={BsFillInfoSquareFill}
-        />
-        <MenuItem
-          title="CONTACT US"
-          address="/contact"
-          Icon={BsFillInfoSquareFill}
-        />
-      </div>
-      {/*  Search */}
-      <div className="items-center justify-between -right-10 ml-5 left-10 text-4xl flex flex-end z-50 md:invisible">
-        {mobile ? (
-          <DropDownMenu
-            isOpen={isMenuOpen}
-            onToggleMenu={toggleMenu}
-            onMenuItemClick={handleMenuItemClick}
-          />
-        ) : (
-          <NavDonateButton> Donate </NavDonateButton>
+        // className={classNames(
+        //   "w-screen max-w-6xl h-32 z-30",
+        //   "flex flex-row  justify-between  mx-auto  items-center px-2",
+        //   "text-white hover:text-black rounded bg-transparent",
+        //   "hover:bg-white/70"
+        // )}
+        className={classNames(
+          "h-32 w-screen max-w-6xl",
+          "mx-auto flex flex-row  items-center justify-between px-2",
+          "text-inherit"
         )}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="flex max-w-[200px] items-center">
+          <div className=" z-10 flex-auto" />
+          <motion.div animate={controls} className="content">
+            <Link href="/">
+              <Image
+                src={isHovered ? LOGOICON : LOGODARKICON}
+                alt="ignite logo"
+                height={90}
+                width={90}
+                className=" scroll-animate-spin min-h-[55px] min-w-[55px] "
+              />
+            </Link>
+          </motion.div>
+          <motion.div
+            animate={{ x: 100 }}
+            transition={{ ease: "easeOut", duration: 1 }}
+          >
+            <Link href="/">
+              <Image
+                src={isHovered ? LOGODARKWORDS : LOGOLIGHTWORDS}
+                alt="ignite logo words"
+                height={120}
+                width={175}
+                className="mt-.5 invisible relative -left-24 bottom-0 z-50 sm:visible  "
+              />
+            </Link>
+          </motion.div>
+          <div />
+        </div>
+        <div
+          className={`invisible relative z-10 flex h-24 items-start text-xl font-bold leading-10 tracking-wider sm:visible`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <MenuItem title="HOME" address="/" Icon={AiTwotoneHome} />
+          <MenuItem
+            title="EVENTS"
+            address="/events"
+            Icon={BsFillInfoSquareFill}
+          />
+          <MenuItem
+            title="ABOUT"
+            address="/about"
+            Icon={BsFillInfoSquareFill}
+          />
+          <MenuItem
+            title="VOLUNTEER"
+            address="/volunteer"
+            Icon={BsFillInfoSquareFill}
+          />
+          <MenuItem
+            title="CONTACT US"
+            address="/contact"
+            Icon={BsFillInfoSquareFill}
+          />
+        </div>
+        {/*  Search */}
+        <div className="flex-end -right-10 left-10 z-50 ml-5 flex items-center justify-between text-4xl md:invisible">
+          {mobile ? (
+            <DropDownMenu
+              isOpen={isMenuOpen}
+              onToggleMenu={toggleMenu}
+              onMenuItemClick={handleMenuItemClick}
+            />
+          ) : (
+            <NavDonateButton> Donate </NavDonateButton>
+          )}
+        </div>
       </div>
     </div>
   );
