@@ -64,8 +64,8 @@ export default function ConsentForm() {
   
     return (
       
-        <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="flex  p-5 mt-5 pt-10 rounded-2xl flex-col justify-center h-full bg-cyan-100/70 items-start md:items-center relative content-around w-screen max-w-6xl  md:max-w-6xl">
-            <div className="flex flex-col md:flex-wrap justify-center w-full max-w-6xl ">
+        <form onSubmit={handleSubmit} method="POST" encType="multipart/form-data" className="flex  p-5 mt-5 pt-10 rounded-2xl flex-col justify-center h-full bg-cyan-100/70 items-start md:items-center relative content-around w-screen max-w-screen-lg md:max">
+            <div className="flex flex-col md:flex-wrap justify-center relative w-full max-w-6xl ">
                 <div className= "md:justify-center  md:flex  md:flex-col md:items-center max-w-6xl container">
         <h2 className="form-titles font-bold text-xl mb-3 md:flex">Programs of Interest</h2>
         <div className= " ">
@@ -129,14 +129,14 @@ export default function ConsentForm() {
 
         </div>
         </div>
-        <div className="w-screen md:flex md:flex-col md:items-center max-w-6xl ">
+        <div className="my-5 flex flex-col items-center max-w-6xl justify-center">
 
             
        
-        <div className="md:flex md:flex-col md:items-center md:w-screen  max-w-3xl">
+        <div className="md:flex md:flex-col md:items-center md:w-full container">
        
         <div className="mb-4  ">
-        <h2 className="font-bold text-xl  md:justify-center relative md:flex md:flex-row  my-5">Address</h2>
+        <h2 className="font-bold text-xl  md:justify-center  md:flex md:flex-row  my-5">Address</h2>
           <label htmlFor="streetAddress" className="block text-sm  font-bold mb-2">Street Address</label>
           <input id="streetAddress" type="text" name="streetAddress" required className="shadow max-w-md md:max-w-lg appearance-none outline-none border focus:border-blue-500 focus:shadow-outline-blue rounded w-screen py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
