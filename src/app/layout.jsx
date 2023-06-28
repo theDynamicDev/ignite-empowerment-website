@@ -27,9 +27,7 @@ export default function RootLayout({ children }) {
           <NavBar />
         </header>
 
-        <div id="content" className="pointer-events-auto">
-          {children}
-        </div>
+        <div id="content">{children}</div>
         <footer className="mt-8">
           <Footer />
         </footer>
