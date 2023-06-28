@@ -49,7 +49,7 @@ export default function Home() {
       <div className="snap-center ">
         <LandingPage />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         {/* <Image
       src="/public/images/flame-black-bg.png"
       alt="flame bg"
@@ -61,10 +61,10 @@ export default function Home() {
       <div className="flex snap-mandatory snap-center md:mt-12 ">
         <WhoWeAre />
       </div>
-      <div className="relative flex snap-mandatory snap-center w-screen h-screen justify-center items-center  mt-0 z-30">
+      <div className="mt-0 flex h-screen w-screen snap-mandatory snap-center  items-center justify-center">
         <RecentImpact />
       </div>
-      <div className="flex justify-center items-center h-screen w-screen">
+      <div className="flex h-screen w-screen items-center justify-center">
         <MakeAnImpact />
       </div>
       <div></div>
