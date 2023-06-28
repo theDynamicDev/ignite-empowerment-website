@@ -1,0 +1,48 @@
+{
+    "forms": {
+      "ConsentForm": {
+        "name": "ConsentForm",
+        "fields": {
+          "program": {
+            "type": "text",
+            "required": true
+          },
+          "firstName": {
+            "type": "text",
+            "required": true
+          },
+          "lastName": {
+            "type": "text",
+            "required": true
+          },
+          "childName-0": {
+            "type": "text"
+          },
+          "childAge-0": {
+            "type": "numeric"
+          },
+          "childName-1": {
+            "type": "text"
+          },
+          "childAge-1": {
+            "type": "numeric"
+          },
+          "signature": {
+            "type": "file",
+            "required": true
+          }
+        },
+        "actions": [
+          {
+            "type": "email",
+            "to": "omar@thedynamic.dev"
+          }
+        ]
+      }
+    }
+  }
+  
+
+  
+
+   
