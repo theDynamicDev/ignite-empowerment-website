@@ -17,18 +17,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="min-h-screen w-screen bg-gray-500">
+    <html lang="en" className="  w-screen h-screen -z-10 bg-gray-200">
       <Head>
         <script async src="https://js.stripe.com/v3/buy-button.js"></script>
       </Head>
 
-      <body className="flex flex-col items-center justify-center ">
-        <header>
+      <body className="flex flex-col justify-center items-center ">
+        <header className={`z-20`}>
           <NavBar />
         </header>
 
-        <div id="content">{children}</div>
-        <footer className="mt-8">
+        <div className=" flex ">{children}</div>
+        <footer className=" mt-8">
           <Footer />
         </footer>
       </body>
