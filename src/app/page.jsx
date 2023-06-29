@@ -1,6 +1,11 @@
 "use client";
 import LandingPage from "./components/LandingPage";
 import OurWork from "./components/OurWork";
+import {draftMode} from 'next/headers'
+import {DocumentsCount, query} from 'components/DocumentsCount'
+import PreviewDocumentsCount from 'components/PreviewDocumentsCount'
+import PreviewProvider from 'components/PreviewProvider'
+import {getClient} from 'lib/sanity.client'
 
 import WhoWeAre from "./components/WhoWeAre";
 import RecentImpact from "./components/RecentImpact";
@@ -8,6 +13,9 @@ import MakeAnImpact from "./components/MakeAnImpact";
 
 import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
+import {draftMode} from 'next/headers'
+import {DocumentsCount, query} from 'components/DocumentsCount'
+import {getClient} from 'lib/sanity.client'
 
 import axios from "axios";
 
@@ -17,6 +25,22 @@ const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
 // console.dir(stripePromise, {depth: null});
+export default async function IndexPage() {
+  const preview = draftMode().isEnabled ? {token: process.env.SANITY_API_READ_TOKEN} : undefined
+
+  const data = await client.fetch(query)
+
+  if (preview) {
+    return (
+      <PreviewProvider token={preview.token}>
+        <PreviewDocumentsCount data={data} />
+      </PreviewProvider>
+    )
+  }
+
+  return <DocumentsCount data={data} />
+}
+
 export default function Home() {
   const [clientSecret, setClientSecret] = React.useState("");
 
@@ -49,7 +73,7 @@ export default function Home() {
       <div className="snap-center ">
         <LandingPage />
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex justify-center items-center">
         {/* <Image
       src="/public/images/flame-black-bg.png"
       alt="flame bg"
@@ -61,10 +85,10 @@ export default function Home() {
       <div className="flex snap-mandatory snap-center md:mt-12 ">
         <WhoWeAre />
       </div>
-      <div className="mt-0 flex h-screen w-screen snap-mandatory snap-center  items-center justify-center">
+      <div className="relative flex snap-mandatory snap-center w-screen h-screen justify-center items-center  mt-0 z-30">
         <RecentImpact />
       </div>
-      <div className="flex h-screen w-screen items-center justify-center">
+      <div className="flex justify-center items-center h-screen w-screen">
         <MakeAnImpact />
       </div>
       <div></div>
