@@ -1,94 +1,94 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import LOGOICON from "../../../public/images/logo-icon-darkshadow.png";
-import LOGOLIGHTWORDS from "../../../public/images/ignite_logo_light.png";
-import LOGODARKICON from "../../../public/images/logo-icon-light-shadow.png";
-import LOGODARKWORDS from "../../../public/images/logo-words-light-shadow.png";
-import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
-import MenuItem from "./MenuItem";
-import { AiTwotoneHome } from "react-icons/ai";
-import { BsFillInfoSquareFill } from "react-icons/bs";
-import NavDonateButton from "./ui/NavDonateButton";
-import DropDownMenu from "./DropDownMenu";
-import classNames from "../../lib/classNames";
-import useScrollPosition from "../../lib/hooks/useScrollPostion";
+'use client'
+import React, {useEffect, useState} from 'react'
+import Link from 'next/link'
+import LOGOICON from '../../../public/images/logo-icon-darkshadow.png'
+import LOGOLIGHTWORDS from '../../../public/images/ignite_logo_light.png'
+import LOGODARKICON from '../../../public/images/logo-icon-light-shadow.png'
+import LOGODARKWORDS from '../../../public/images/logo-words-light-shadow.png'
+import Image from 'next/image'
+import {motion, useAnimation} from 'framer-motion'
+import MenuItem from './MenuItem'
+import {AiTwotoneHome} from 'react-icons/ai'
+import {BsFillInfoSquareFill} from 'react-icons/bs'
+import NavDonateButton from './ui/NavDonateButton'
+import DropDownMenu from './DropDownMenu'
+import classNames from '../../lib/classNames'
+import useScrollPosition from '../../lib/hooks/useScrollPostion'
 //going to animate log to stager in the image first then the words come from left. framer motion
 
 function Navbar() {
-  const scrollPosition = useScrollPosition();
-  const [isHovered, setIsHovered] = React.useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollPosition = useScrollPosition()
+  const [isHovered, setIsHovered] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   const handleMenuItemClick = () => {
-    setIsMenuOpen(false);
-  };
+    setIsMenuOpen(false)
+  }
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+    setIsHovered(true)
+  }
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+    setIsHovered(false)
+  }
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
-  });
-  const controls = useAnimation();
-  const [scrollY, setScrollY] = useState(0);
+  })
+  const controls = useAnimation()
+  const [scrollY, setScrollY] = useState(0)
 
   function logit() {
-    setScrollY(window.scrollY);
+    setScrollY(window.scrollY)
     controls.start({
       rotate: scrollY / 0.5, // you can adjust the rate of rotation here
-      transition: { duration: 0.5 },
-    });
+      transition: {duration: 0.5},
+    })
   }
 
   useEffect(() => {
     function watchScroll() {
-      window.addEventListener("scroll", logit);
+      window.addEventListener('scroll', logit)
     }
-    watchScroll();
+    watchScroll()
     // Remove listener (like componentWillUnmount)
     return () => {
-      window.removeEventListener("scroll", logit);
-    };
-  });
+      window.removeEventListener('scroll', logit)
+    }
+  })
 
   useEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      });
+      })
     }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize)
 
-    handleResize();
+    handleResize()
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-  const mobile = windowSize.width <= 768;
+  const mobile = windowSize.width <= 768
   const gradientStyle = {
-    background: "linear-gradient(to bottom, #ffffff9a,rgba(255, 255, 255, 0)",
-  };
+    background: 'linear-gradient(to bottom, #ffffff9a,rgba(255, 255, 255, 0)',
+  }
   return (
     <div
       className={classNames(
-        "z-50 w-screen",
-        "text-white hover:bg-white hover:text-black hover:shadow",
-        "transition duration-500",
-        "md:fixed md:left-0 md:top-0",
-        scrollPosition > 0 && "md:bg-white md:text-black md:shadow"
+        'z-30 w-screen',
+        'text-white hover:bg-white hover:text-black hover:shadow',
+        'transition duration-500',
+        'md:fixed md:left-0 md:top-0',
+        scrollPosition > 0 && 'md:bg-white md:text-black md:shadow'
       )}
     >
       <div
@@ -99,9 +99,9 @@ function Navbar() {
         //   "hover:bg-white/70"
         // )}
         className={classNames(
-          "h-32 w-screen max-w-6xl",
-          "mx-auto flex flex-row  items-center justify-between px-2",
-          "text-inherit"
+          'h-32 w-screen max-w-6xl',
+          'mx-auto flex flex-row  items-center justify-between px-2',
+          'text-inherit'
         )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -119,10 +119,7 @@ function Navbar() {
               />
             </Link>
           </motion.div>
-          <motion.div
-            animate={{ x: 100 }}
-            transition={{ ease: "easeOut", duration: 1 }}
-          >
+          <motion.div animate={{x: 100}} transition={{ease: 'easeOut', duration: 1}}>
             <Link href="/">
               <Image
                 src={isHovered ? LOGODARKWORDS : LOGOLIGHTWORDS}
@@ -141,26 +138,10 @@ function Navbar() {
           onMouseLeave={handleMouseLeave}
         >
           <MenuItem title="HOME" address="/" Icon={AiTwotoneHome} />
-          <MenuItem
-            title="EVENTS"
-            address="/events"
-            Icon={BsFillInfoSquareFill}
-          />
-          <MenuItem
-            title="ABOUT"
-            address="/about"
-            Icon={BsFillInfoSquareFill}
-          />
-          <MenuItem
-            title="VOLUNTEER"
-            address="/volunteer"
-            Icon={BsFillInfoSquareFill}
-          />
-          <MenuItem
-            title="CONTACT US"
-            address="/contact"
-            Icon={BsFillInfoSquareFill}
-          />
+          <MenuItem title="EVENTS" address="/events" Icon={BsFillInfoSquareFill} />
+          <MenuItem title="ABOUT" address="/about" Icon={BsFillInfoSquareFill} />
+          <MenuItem title="VOLUNTEER" address="/volunteer" Icon={BsFillInfoSquareFill} />
+          <MenuItem title="CONTACT US" address="/contact" Icon={BsFillInfoSquareFill} />
         </div>
         {/*  Search */}
         <div className="flex-end -right-10 left-10 z-50 ml-5 flex items-center justify-between text-4xl md:invisible">
@@ -176,7 +157,7 @@ function Navbar() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
