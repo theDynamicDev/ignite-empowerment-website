@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import {getClient} from '../../../lib/sanity.preview'
+import {getClient} from '../../../lib/sanity'
 import {LiveQueryProvider} from '@sanity/preview-kit'
 import {useMemo} from 'react'
 

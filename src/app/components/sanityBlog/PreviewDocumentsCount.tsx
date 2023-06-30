@@ -1,10 +1,14 @@
 'use client'
 
 import {useLiveQuery} from 'next-sanity/preview'
-import {query, DocumentsCount} from 'components/DocumentsCount'
+import {query, BlogList} from './BlogList'
 
 export default function PreviewDocumentsCount({data: initialData}) {
-  const [data] = useLiveQuery(initialData, query)
+  const [data, loading] = useLiveQuery(initialData, query)
 
-  return <DocumentsCount data={data} />
+  if (loading) {
+    return <>Loading...</>
+  }
+
+  return <BlogList data={data} />
 }

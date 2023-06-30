@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "@emotion/styled": "^11.11.0",
     "@formspree/react": "^2.4.2",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -35,7 +34,7 @@
     "framer-motion": "^10.12.16",
     "gifshot": "^0.4.5",
     "next": "latest",
-    "next-sanity": "5.0.2",
+    "next-sanity": "^5.0.2",
     "node-sass": "^9.0.0",
     "postcss": "^8.4.24",
     "prop-types": "^15.5.8",

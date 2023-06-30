@@ -29,5 +29,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@xpd/tailwind-3dtransforms'), require('@tailwindcss/line-clamp')],
+  plugins: [require('@xpd/tailwind-3dtransforms')],
 }

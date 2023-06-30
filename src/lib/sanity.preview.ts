@@ -1,25 +1,18 @@
-import {projectId, dataset, apiVersion} from './sanity.client'
-import {createClient} from '@sanity/client'
-import type {SanityClient} from '@sanity/client'
+'use client'
 
-export function getClient({preview}: {preview?: {token: string}}): SanityClient {
-  const client = createClient({
-    projectId,
-    dataset,
-    apiVersion,
-    useCdn: true,
-    perspective: 'published',
-  })
-  if (preview) {
-    if (!preview.token) {
-      throw new Error('You must provide a token to preview drafts')
-    }
-    return client.withConfig({
-      token: preview.token,
-      useCdn: false,
-      ignoreBrowserTokenWarning: true,
-      perspective: 'previewDrafts',
-    })
-  }
-  return client
+import {definePreview} from 'next-sanity/preview'
+import {projectId, dataset} from './sanity.client'
+
+function onPublicAccessOnly() {
+  throw new Error(`Unable to load preview as you're not logged in`)
 }
+
+if (!projectId || !dataset) {
+  throw new Error(`Missing projectId or dataset. Check your sanity.json or .env`)
+}
+
+export const usePreview = definePreview({
+  projectId,
+  dataset,
+  onPublicAccessOnly,
+})
