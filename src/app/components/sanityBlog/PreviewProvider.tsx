@@ -1,9 +1,11 @@
 'use client'
+import React, {useMemo} from 'react'
+import {LiveQueryProvider} from 'next-sanity/preview'
+import {createClient} from '@sanity/preview-kit/client'
 
-import React from 'react'
-import {getClient} from '../../../lib/sanity'
-import {LiveQueryProvider} from '@sanity/preview-kit'
-import {useMemo} from 'react'
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION
 
 export default function PreviewProvider({
   children,
@@ -12,6 +14,32 @@ export default function PreviewProvider({
   children: React.ReactNode
   token: string
 }) {
-  const client = useMemo(() => getClient({preview: {token}}), [token])
-  return <LiveQueryProvider client={client}>{children}</LiveQueryProvider>
+  console.log('PreviewProvider', token)
+
+  const client = useMemo(() => {
+    const config = {
+      projectId,
+      dataset,
+      useCdn: false,
+      apiVersion,
+      studioUrl: 'http://www.ignite-empowerment.org.sanity.studio',
+      encodeSourceMap: 'auto',
+    }
+
+    if (token) {
+      return createClient({
+        ...config,
+        token,
+        perspective: 'previewDrafts',
+        ignoreBrowserTokenWarning: true,
+      })
+    }
+    return createClient(config)
+  }, [token])
+
+  return (
+    <LiveQueryProvider logger={console} client={client}>
+      {children}
+    </LiveQueryProvider>
+  )
 }

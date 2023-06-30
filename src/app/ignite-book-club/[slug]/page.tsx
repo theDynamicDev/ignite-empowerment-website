@@ -20,14 +20,16 @@ export async function generateStaticParams() {
     }`
 
   const slugs: Post[] = await client.fetch(query)
+  console.log('slugs', slugs)
   const slugRoutes = slugs.map((slug) => slug.slug.current)
-
+  console.log('slugRoutes', slugRoutes)
   return slugRoutes.map((slug) => ({
     slug,
   }))
 }
-
-async function Post({params: {slug}}: Props) {
+console.log(Post)
+export default async function Post({params: {slug}}: Props) {
+  console.log('slug in Posts', {slug})
   const query = groq`*[_type=='post' && slug.current == $slug][0]
     {
       ...,
@@ -36,9 +38,9 @@ async function Post({params: {slug}}: Props) {
     }`
 
   const post: Post = await client.fetch(query, {slug: slug})
-
+  console.log('post in Posts', {slug})
   return (
-    <article className="px-10 pb-28">
+    <article className="px-10 pt-32 relative pb-28">
       <section className="space-y-2 border border-[#F7AB0A] text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
@@ -101,8 +103,6 @@ async function Post({params: {slug}}: Props) {
     </article>
   )
 }
-
-export default Post
 
 // import {draftMode} from 'next/headers'
 // import {DocumentsCount, query} from 'components/DocumentsCount'

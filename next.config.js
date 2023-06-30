@@ -3,14 +3,14 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/public/:path*",
-        destination: "/:path*",
+        source: '/public/:path*',
+        destination: '/:path*',
       },
-    ];
+    ]
   },
   images: {
-    domains: ["cdn.sanity.io"],
+    domains: ['cdn.sanity.io'],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

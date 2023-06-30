@@ -9,7 +9,7 @@ export function getClient({preview}: {preview?: {token: string}}): SanityClient 
     projectId,
     dataset,
     apiVersion,
-    useCdn: true,
+    useCdn: false,
     perspective: 'published',
   })
   if (preview) {
