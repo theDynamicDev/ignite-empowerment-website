@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function StudioPage() {
   return (
-    <div className="w-screen h-screen">
+    <div className="w-full h-full mt-32">
       <Studio />
     </div>
   )
