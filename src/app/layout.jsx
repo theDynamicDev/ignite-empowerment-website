@@ -12,7 +12,7 @@ export default function RootLayout({children}) {
   return (
     <html lang="en" className="min-h-screen w-screen bg-gray-900">
       <body className="flex flex-col items-center justify-center ">
-        <header>
+        <header className="fixed z-50">
           <NavBar />
         </header>
 
