@@ -16,7 +16,7 @@ export default function MakeAnImpact() {
       </Text>
       <div className="flex flex-col md:flex-row md:justify-evenly max-h-full  justify-between bg-transparent items-center w-full h-full">
         <div className="relative md:mt-32 md:space-y-36 space-y-[50vh]">
-          <div className="absolute shadow-lg -mt-2.5 -ml-3 md:ml-0 w-[310px] md:w-screen h-[1000px]  md:h-screen md:max-h-[850px] rounded-lg bg-yellow-400 animate-pulse -z-20" />
+          <div className="absolute shadow-lg -mt-2.5 -ml-3 md:ml-0 w-[310px] md:w-screen h-[850px]  md:h-screen md:max-h-[850px] rounded-lg bg-yellow-400 animate-pulse -z-20" />
           <div className="rounded-lg flex flex-col w-[280px] md:w-screen space-y-36  md: md:items-center md:[750px] h-[550px] ">
             <div className="rounded-lg -mt-[50vh] md:-mt-32 w-[280px] h-[250px]">
               <script async src="https://js.stripe.com/v3/buy-button.js"></script>
@@ -26,7 +26,7 @@ export default function MakeAnImpact() {
                 publishable-key={stripeKey}
               ></stripe-buy-button>
             </div>
-            <div className="w-full max-w-5xl ml-1 md:ml-0 rounded-lg md:overflow-visible overflow-x-scroll pb-28 md:pb-0 ">
+            <div className="w-full max-w-5xl ml-1 md:ml-0 rounded-lg md:overflow-visible overflow-x-scroll pb-44 md:pb-0 ">
               <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
               <stripe-pricing-table
                 pricing-table-id="prctbl_1NOxbTBTJQ94GAwCaiouZIS0"
