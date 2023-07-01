@@ -4,7 +4,7 @@ import {Text} from '@nextui-org/react'
 export default function MakeAnImpact() {
   const stripeKey = process.env.NEXT_PUBLIC_LIVE_STRIPE_PUBLISHABLE_KEY
   return (
-    <div className="flex flex-col items-center md:justify-evenly justify-evenly w-screen h-screen  bg-gradient-to-t from-cyan-400 to-transparent md:pb-56 pb-[1200px] mt-72 md:mt-8 py-2 ">
+    <div className="flex flex-col items-center md:justify-evenly justify-evenly w-screen h-screen  bg-gradient-to-t from-cyan-400 to-transparent md:pb-56 pb-[1200px] mt-[50vh] md:mt-8 py-2 ">
       <Text
         css={{
           textGradient: '45deg, $red700 -70%, $yellow600 40%, $green600 100%',
@@ -26,7 +26,7 @@ export default function MakeAnImpact() {
                 publishable-key={stripeKey}
               ></stripe-buy-button>
             </div>
-            <div className="w-full max-w-5xl rounded-lg md:overflow-visible overflow-x-scroll pb-28 md:pb-0 ">
+            <div className="w-full max-w-5xl ml-1 md:ml-0 rounded-lg md:overflow-visible overflow-x-scroll pb-28 md:pb-0 ">
               <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
               <stripe-pricing-table
                 pricing-table-id="prctbl_1NOxbTBTJQ94GAwCaiouZIS0"
