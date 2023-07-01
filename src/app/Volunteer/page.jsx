@@ -1,78 +1,79 @@
-"use client";
-import { Formik, Field, Form } from "formik";
-import * as Yup from "yup";
-import ReactSignatureCanvas from "react-signature-canvas";
-import { useState } from "react";
-import { CountryDropdown } from "react-country-region-selector";
-import { Text } from "@nextui-org/react";
-import classNames from "../../lib/classNames";
+'use client'
+import {Formik, Field, Form} from 'formik'
+import * as Yup from 'yup'
+import ReactSignatureCanvas from 'react-signature-canvas'
+import {useState} from 'react'
+import {CountryDropdown} from 'react-country-region-selector'
+import {Text} from '@nextui-org/react'
+import classNames from '../../lib/classNames'
 
 const VolunteerForm = () => {
-  const [sigCanvas, setSigCanvas] = useState(null);
-  const [signature, setSignature] = useState("");
-  const [country, setCountry] = useState("");
-  const [region, setRegion] = useState("");
-  const [selectedCountry, setSelectedCountry] = useState("");
+  const [sigCanvas, setSigCanvas] = useState(null)
+  const [signature, setSignature] = useState('')
+  const [country, setCountry] = useState('')
+  const [region, setRegion] = useState('')
+  const [selectedCountry, setSelectedCountry] = useState('')
   const initialValues = {
-    firstName: "",
-    lastName: "",
-    phone: "",
-    secondaryPhone: "",
-    email: "",
-    address: "",
-    secondaryAddress: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    country: "",
+    firstName: '',
+    lastName: '',
+    phone: '',
+    secondaryPhone: '',
+    email: '',
+    address: '',
+    secondaryAddress: '',
+    city: '',
+    state: '',
+    zipCode: '',
+    country: '',
     volunteerSelections: [],
-    signature: "",
-    date: "",
-  };
+    signature: '',
+    date: '',
+  }
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("Required"),
-    lastName: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email address").required("Required"),
-  });
+    firstName: Yup.string().required('Required'),
+    lastName: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email address').required('Required'),
+  })
 
   const handleClearSignature = () => {
     if (sigCanvas) {
-      sigCanvas.clear();
-      setSignature("");
+      sigCanvas.clear()
+      setSignature('')
     }
-  };
+  }
 
   const handleSignature = () => {
     if (sigCanvas) {
-      setSignature(sigCanvas.getTrimmedCanvas().toDataURL("image/png"));
+      setSignature(sigCanvas.getTrimmedCanvas().toDataURL('image/png'))
     }
-  };
+  }
 
   const handleSubmit = (values) => {
-    values.signature = signature;
-  };
+    values.signature = signature
+  }
 
   return (
     <div
       className={classNames(
-        "w-screen",
-        "px-1 py-3 md:mt-32",
-        "flex flex-col items-center justify-center"
+        'w-screen',
+        'px-1 py-3 md:pt-36 md:',
+        'flex flex-col items-center justify-center',
+        'bg-forms-background bg-fill bg-fixed bg bg-center '
       )}
     >
       <Text
         css={{
-          textGradient: "45deg, $red700 -70%, $yellow600 40%, $green600 100%",
+          textGradient: '45deg, $red700 -70%, $yellow600 40%, $green600 100%',
         }}
         weight="bold"
         className={classNames(
-          "z-20",
-          "mb-6",
-          "flex flex-row items-center justify-center text-center",
-          "indent-2 text-4xl leading-10 tracking-wide text-white",
-          "md:shadow-gray md:items-center",
-          "drop-shadow-lg"
+          'z-20',
+          'mb-6',
+          'flex flex-row items-center justify-center text-center',
+          'indent-2 text-4xl leading-10 tracking-wide text-white',
+          'md:shadow-gray md:items-center',
+          'drop-shadow-lg'
         )}
       >
         <span className="">VOLUNTEER</span>
@@ -81,36 +82,31 @@ const VolunteerForm = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
-        className={classNames("w-full", "flex items-start justify-start")}
+        className={classNames('w-full', 'flex items-start justify-start')}
       >
         <Form
           className={classNames(
-            "w-full md:max-w-5xl",
-            "mx-auto px-4 py-3",
-            "flex flex-col items-center justify-start",
-            "rounded-lg",
-            "bg-sky-300/30"
+            'w-full md:max-w-full',
+            'mx-auto px-4 py-10',
+            'flex flex-col items-center justify-start',
+            'rounded-lg',
+            'bg-black/50'
           )}
         >
-          <div
-            className={classNames(
-              "container max-w-md",
-              "flex flex-col justify-evenly"
-            )}
-          >
+          <div className={classNames('container max-w-md', 'flex flex-col justify-evenly')}>
             <div
               className={classNames(
-                "h-full w-full",
-                "flex flex-col",
-                "md:flex-row md:items-start md:justify-start"
+                'h-full w-full',
+                'flex flex-col',
+                'md:flex-row md:items-start md:justify-start'
               )}
             >
               <div
                 className={classNames(
-                  "w-full",
-                  "py-1",
-                  "flex  flex-col items-start justify-between",
-                  "md:max-w-sm md:pr-3"
+                  'w-full',
+                  'py-1',
+                  'flex  flex-col items-start justify-between',
+                  'md:max-w-sm md:pr-3'
                 )}
               >
                 <label htmlFor="firstName" className="volunteer-label">
@@ -121,18 +117,18 @@ const VolunteerForm = () => {
                   name="firstName"
                   placeholder="John"
                   className={classNames(
-                    "container",
-                    "px-4 py-2",
-                    "rounded-md border border-gray-300"
+                    'container',
+                    'px-4 py-2',
+                    'rounded-md border border-gray-300'
                   )}
                 />
               </div>
               <div
                 className={classNames(
-                  "w-full",
-                  "py-1",
-                  "flex  flex-col items-start justify-between",
-                  "md:max-w-sm"
+                  'w-full',
+                  'py-1',
+                  'flex  flex-col items-start justify-between',
+                  'md:max-w-sm'
                 )}
               >
                 <label htmlFor="lastName" className="volunteer-label">
@@ -142,28 +138,24 @@ const VolunteerForm = () => {
                   id="lastName"
                   name="lastName"
                   placeholder="Doe"
-                  className={classNames(
-                    "container",
-                    "px-4 py-2",
-                    "rounded border border-gray-300"
-                  )}
+                  className={classNames('container', 'px-4 py-2', 'rounded border border-gray-300')}
                 />
               </div>
             </div>
 
             <div
               className={classNames(
-                "h-full w-full",
-                "flex flex-col",
-                "md:flex-row md:items-center md:justify-start"
+                'h-full w-full',
+                'flex flex-col',
+                'md:flex-row md:items-center md:justify-start'
               )}
             >
               <div
                 className={classNames(
-                  "w-full",
-                  "py-1",
-                  "flex  flex-col items-start justify-between",
-                  "md:max-w-sm md:pr-3"
+                  'w-full',
+                  'py-1',
+                  'flex  flex-col items-start justify-between',
+                  'md:max-w-sm md:pr-3'
                 )}
               >
                 <label htmlFor="phone" className="volunteer-label">
@@ -178,10 +170,10 @@ const VolunteerForm = () => {
               </div>
               <div
                 className={classNames(
-                  "w-full",
-                  "py-1",
-                  "flex  flex-col items-start justify-between",
-                  "md:max-w-sm"
+                  'w-full',
+                  'py-1',
+                  'flex  flex-col items-start justify-between',
+                  'md:max-w-sm'
                 )}
               >
                 <label htmlFor="secondaryPhone" className="volunteer-label">
@@ -265,10 +257,7 @@ const VolunteerForm = () => {
               </div>
 
               <div className="flex flex-col">
-                <label
-                  htmlFor="country"
-                  className=" mb-1 font-semibold text-orange-500 shadow-sm"
-                >
+                <label htmlFor="country" className=" mb-1 font-semibold text-orange-500 shadow-sm">
                   Country
                 </label>
                 <CountryDropdown
@@ -285,12 +274,12 @@ const VolunteerForm = () => {
             </div>
             <div
               className={classNames(
-                "w-full",
-                "mb-4 p-2 py-3",
-                "justify-bewteen flex flex-col items-start",
-                "rounded-lg ",
-                "border border-gray-300",
-                "bg-white/60 shadow-lg"
+                'w-full',
+                'mb-4 p-2 py-3',
+                'justify-bewteen flex flex-col items-start',
+                'rounded-lg ',
+                'border border-gray-300',
+                'bg-white/60 shadow-lg'
               )}
             >
               <label
@@ -360,10 +349,7 @@ const VolunteerForm = () => {
                 </label>
               </div>
             </div>
-            <label
-              htmlFor="signature"
-              className=" mb-1  font-semibold text-orange-500"
-            >
+            <label htmlFor="signature" className=" mb-1  font-semibold text-orange-500">
               Signature
             </label>
             <div className=" rounded-lg bg-white shadow-lg ">
@@ -372,10 +358,10 @@ const VolunteerForm = () => {
                 canvasProps={{
                   width: 500,
                   height: 200,
-                  className: "sigCanvas",
+                  className: 'sigCanvas',
                 }}
                 ref={(ref) => {
-                  setSigCanvas(ref);
+                  setSigCanvas(ref)
                 }}
                 onEnd={handleSignature}
                 className="rounded border  border-gray-300  bg-cyan-300"
@@ -398,17 +384,14 @@ const VolunteerForm = () => {
               className="rounded border border-gray-300 px-4 py-2"
             />
 
-            <button
-              type="submit"
-              className="mt-4 rounded bg-blue-600 px-4 py-2 text-white"
-            >
+            <button type="submit" className="mt-4 rounded bg-blue-600 px-4 py-2 text-white">
               Submit
             </button>
           </div>
         </Form>
       </Formik>
     </div>
-  );
-};
+  )
+}
 
-export default VolunteerForm;
+export default VolunteerForm
