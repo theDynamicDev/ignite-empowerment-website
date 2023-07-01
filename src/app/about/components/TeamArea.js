@@ -36,7 +36,7 @@ const TeamArea = () => {
             </div>
           </div>
         </div>
-        <div className="h-[79vh] md:h-[700px] -mt-12 md:pb-5 overflow-y-scroll overflow-x-scroll gap-y-[70%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-44 md:grid-flow-col md:grid-cols-3  md:px-10 justify-center items-center bg-white pb-32">
+        <div className="h-[79vh] md:h-[700px] -mt-12 md:pb-5  overflow-x-hidden gap-y-[70%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-[0%] md:grid-flow-col md:grid-cols-3  md:px-auto justify-center items-center bg-white pb-32">
           <div className="relative hover:mb-24 h-full">
             <Card image={samImage} title={'PRESDENT/CEO'} name={'SAM MONROE'} />
           </div>

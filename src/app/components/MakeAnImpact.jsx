@@ -2,6 +2,7 @@ import React from 'react'
 import {Text} from '@nextui-org/react'
 
 export default function MakeAnImpact() {
+  const stripeKey = process.env.NEXT_PUBLIC_LIVE_STRIPE_PUBLISHABLE_KEY
   return (
     <div className="flex flex-col items-center md:justify-evenly justify-evenly w-screen h-screen  bg-gradient-to-t from-cyan-400 to-transparent pb-10 mt-8 py-2 ">
       <Text
@@ -14,27 +15,22 @@ export default function MakeAnImpact() {
         <span className="">MAKE AN IMPACT</span>
       </Text>
       <div className="flex flex-col md:flex-row md:justify-evenly overflow-scroll-y   justify-between bg-transparent items-center w-full h-full">
-        <div className="relative ">
-          <div className="absolute shadow-lg  -mt-2.5 -ml-3 w-[310px] h-[400px] rounded-lg bg-yellow-400 animate-pulse -z-10" />
-          <div className="rounded-lg w-[280px] h-[350px] ">
-            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-            <stripe-buy-button
-              className="w-full h-full"
-              buy-button-id="buy_btn_1NHuS2BTJQ94GAwC5jq2akMN"
-              publishable-key="pk_test_LagVlliAFC7BC1xboVuxyRlS"
-            ></stripe-buy-button>
-          </div>
-        </div>
+        <div className="relative">
+          <div className="absolute shadow-lg  -mt-2.5 -ml-3 w-[310px] md:w-screen h-[580px] overflow-scroll rounded-lg bg-yellow-400 animate-pulse -z-10" />
+          <div className="rounded-lg flex flex-col md:flex-row w-[280px] md:w-screen space-y-10 md:space-y-0 md:justify-evenly md:items-center overflow-scroll  h-[550px]">
+            <div className="rounded-lg w-[280px] h-[350px] ">
+              <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
-        <div className="relative ">
-          <div className="absolute shadow-lg  -mt-2.5 -ml-3 w-[310px] h-[380px] rounded-lg bg-yellow-400 animate-pulse -z-10" />
-          <div className="rounded-lg w-[280px] h-[350px]">
-            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-            <stripe-buy-button
-              className="w-full h-full"
-              buy-button-id="buy_btn_1NHuj0BTJQ94GAwCKRsjpRK5"
-              publishable-key="pk_test_LagVlliAFC7BC1xboVuxyRlS"
-            ></stripe-buy-button>
+              <stripe-buy-button
+                buy-button-id="buy_btn_1NOx5HBTJQ94GAwCWRXXn0GO"
+                publishable-key={stripeKey}
+              ></stripe-buy-button>
+            </div>
+            <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+            <stripe-pricing-table
+              pricing-table-id="prctbl_1NOxbTBTJQ94GAwCaiouZIS0"
+              publishable-key={stripeKey}
+            ></stripe-pricing-table>
           </div>
         </div>
       </div>

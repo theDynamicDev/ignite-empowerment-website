@@ -13,33 +13,33 @@ import axios from 'axios'
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_LIVE_STRIPE_PUBLISHABLE_KEY)
 // console.dir(stripePromise, {depth: null});
 export default function Home() {
-  const [clientSecret, setClientSecret] = React.useState('')
+  // const [clientSecret, setClientSecret] = React.useState('')
 
-  React.useEffect(() => {
-    fetchPaymentIntent()
-  }, [])
+  // React.useEffect(() => {
+  //   fetchPaymentIntent()
+  // }, [])
 
-  const fetchPaymentIntent = async () => {
-    const {data} = await axios.post('/api/create-payment-intent', {
-      items: [{id: 'DONATIONS'}],
-    })
-    setClientSecret(data.clientSecret)
-    console.log('this is the client secret from function =  ' + data.clientSecret)
-    console.log('this is the data from function =  ', data)
-    console.log('this is the client secret index =  ', clientSecret)
-  }
-  const appearance = {
-    theme: 'stripe',
-  }
-  const options = {
-    clientSecret,
-    appearance,
-  }
+  // const fetchPaymentIntent = async () => {
+  //   const {data} = await axios.post('/api/create-payment-intent', {
+  //     items: [{id: 'DONATIONS'}],
+  //   })
+  // setClientSecret(data.clientSecret)
+  // console.log('this is the client secret from function =  ' + data.clientSecret)
+  // console.log('this is the data from function =  ', data)
+  // console.log('this is the client secret index =  ', clientSecret)
+  // }
+  // const appearance = {
+  //   theme: 'stripe',
+  // }
+  // const options = {
+  //   clientSecret,
+  //   appearance,
+  // }
 
-  console.log('this is the client secret index =  ', clientSecret)
+  // console.log('this is the client secret index =  ', clientSecret)
   return (
     <div className="flex flex-col max-w-full">
       <div className="snap-center ">

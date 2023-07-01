@@ -10,7 +10,9 @@ export default function Footer() {
           <h2 className="pb-4 text-lg font-semibold">
             Arm our youth with an unstoppable mindset...
           </h2>
-          <NavDonateButton>DONATE</NavDonateButton>
+          <Link href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
+            <NavDonateButton>DONATE</NavDonateButton>
+          </Link>
         </div>
         <div className="mb-8 space-y-2 md:mb-0 md:w-1/2">
           <h2 className="text-lg font-semibold text-orange-500">Contact Us</h2>

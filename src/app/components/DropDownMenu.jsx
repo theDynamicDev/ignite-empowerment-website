@@ -36,7 +36,7 @@ const menuItems = [
   {name: 'About', link: '/about'},
   {name: 'Volunteer', link: '/volunteer'},
   {name: 'Events', link: '/events'},
-  {name: 'Donate', link: '/donate'},
+  {name: 'Donate', link: 'https://buy.stripe.com/aEU7tpcfl13Q0sU5kk'},
   {name: 'Register', link: '/register'},
   {name: 'Contact Us', link: '/contact'},
 ]

@@ -84,7 +84,7 @@ function Navbar() {
   return (
     <div
       className={classNames(
-        'z-50 w-screen',
+        'z-40 w-screen',
         'text-white hover:bg-white hover:text-black hover:shadow',
         'transition duration-500',
         'md:fixed md:left-0 md:top-0',
@@ -152,7 +152,13 @@ function Navbar() {
               onMenuItemClick={handleMenuItemClick}
             />
           ) : (
-            <NavDonateButton> Donate </NavDonateButton>
+            <Link className="z-50" href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
+              {' '}
+              <NavDonateButton href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
+                {' '}
+                Donate{' '}
+              </NavDonateButton>
+            </Link>
           )}
         </div>
       </div>
