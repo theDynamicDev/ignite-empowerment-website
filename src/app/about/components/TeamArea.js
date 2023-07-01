@@ -4,8 +4,9 @@ import Image from 'next/image'
 import Card from './Card'
 import {Text} from '@nextui-org/react'
 const TeamArea = () => {
-  const samImage = '/public/images/CEO-SAM.png'
+  const samImage = '/public/images/bossMan.png'
   const directorOfCollegeReadiness = '/public/images/Tiyaji_college-ready.png'
+  const bossLady = '/public/images/vp-monroe.png'
   return (
     <section className=" flex relative justify-center md:top-0 top-10 items-center h-screen">
       <div className=" justify-center bg-yellow-200/80 items-center md:flex-row flex-col w-full h-full">
@@ -40,7 +41,7 @@ const TeamArea = () => {
             <Card image={samImage} title={'CEO'} name={'SAM MONROE'} />
           </div>
           <div className="relative h-full">
-            <Card image={samImage} title={'CEO'} name={'ot Monroe'} />
+            <Card image={bossLady} title={'CEO'} name={'ot Monroe'} />
           </div>
           <div className="relative h-full">
             <Card image={directorOfCollegeReadiness} title={'NOT'} name={'Sam Monroe'} />
