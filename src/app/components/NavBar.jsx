@@ -47,7 +47,7 @@ function Navbar() {
     setScrollY(window.scrollY)
     controls.start({
       rotate: scrollY / 0.5, // you can adjust the rate of rotation here
-      transition: {duration: 0.5},
+      transition: {duration: 0.8},
     })
   }
 
@@ -84,7 +84,7 @@ function Navbar() {
   return (
     <div
       className={classNames(
-        'z-30 w-screen',
+        'z-50 w-screen',
         'text-white hover:bg-white hover:text-black hover:shadow',
         'transition duration-500',
         'md:fixed md:left-0 md:top-0',

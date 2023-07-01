@@ -1,51 +1,47 @@
-"use client";
-import LandingPage from "./components/LandingPage";
-import OurWork from "./components/OurWork";
+'use client'
+import LandingPage from './components/LandingPage'
+import OurWork from './components/OurWork'
 
-import WhoWeAre from "./components/WhoWeAre";
-import RecentImpact from "./components/RecentImpact";
-import MakeAnImpact from "./components/MakeAnImpact";
+import WhoWeAre from './components/WhoWeAre'
+import RecentImpact from './components/RecentImpact'
+import MakeAnImpact from './components/MakeAnImpact'
 
-import { loadStripe } from "@stripe/stripe-js";
-import React from "react";
+import {loadStripe} from '@stripe/stripe-js'
+import React from 'react'
 
-import axios from "axios";
+import axios from 'axios'
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
 // console.dir(stripePromise, {depth: null});
 export default function Home() {
-  const [clientSecret, setClientSecret] = React.useState("");
+  const [clientSecret, setClientSecret] = React.useState('')
 
   React.useEffect(() => {
-    fetchPaymentIntent();
-  }, []);
+    fetchPaymentIntent()
+  }, [])
 
   const fetchPaymentIntent = async () => {
-    const { data } = await axios.post("/api/create-payment-intent", {
-      items: [{ id: "DONATIONS" }],
-    });
-    setClientSecret(data.clientSecret);
-    console.log(
-      "this is the client secret from function =  " + data.clientSecret
-    );
-    console.log("this is the data from function =  ", data);
-    console.log("this is the client secret index =  ", clientSecret);
-  };
+    const {data} = await axios.post('/api/create-payment-intent', {
+      items: [{id: 'DONATIONS'}],
+    })
+    setClientSecret(data.clientSecret)
+    console.log('this is the client secret from function =  ' + data.clientSecret)
+    console.log('this is the data from function =  ', data)
+    console.log('this is the client secret index =  ', clientSecret)
+  }
   const appearance = {
-    theme: "stripe",
-  };
+    theme: 'stripe',
+  }
   const options = {
     clientSecret,
     appearance,
-  };
+  }
 
-  console.log("this is the client secret index =  ", clientSecret);
+  console.log('this is the client secret index =  ', clientSecret)
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-w-full">
       <div className="snap-center ">
         <LandingPage />
       </div>
@@ -64,9 +60,9 @@ export default function Home() {
       <div className="mt-0 flex h-screen w-screen snap-mandatory snap-center  items-center justify-center">
         <RecentImpact />
       </div>
-      <div className="flex h-screen w-screen items-center justify-center">
+      <section className="flex h-screen w-screen items-center justify-center">
         <MakeAnImpact />
-      </div>
+      </section>
       <div></div>
 
       {/* Statistics? */}
@@ -74,5 +70,5 @@ export default function Home() {
       {/* Volunteer */}
       {/* Footer */}
     </div>
-  );
+  )
 }

@@ -8,8 +8,8 @@ const TeamArea = () => {
   const directorOfCollegeReadiness = '/public/images/Tiyaji_college-ready.png'
   const bossLady = '/public/images/vp-monroe.png'
   return (
-    <section className=" flex relative justify-center md:top-0 top-10 items-center h-screen">
-      <div className=" justify-center bg-yellow-200/80 items-center md:flex-row flex-col w-full h-full">
+    <section className=" flex relative justify-center md:top-0 top-20  items-center h-screen">
+      <div className=" justify-center items-center bg-white md:flex-row flex-col w-full h-full">
         <div className="relative  md:py-0 h-[170px] md:h-1/3 w-screen flex justify-center items-center bg-blue-400/40">
           <div className=" absolute object-cover h-full w-screen">
             <Image
@@ -36,14 +36,14 @@ const TeamArea = () => {
             </div>
           </div>
         </div>
-        <div className="h-[79vh] md:h-[700px] overflow-y-scroll overflow-x-scroll gap-y-[100%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-44 md:grid-flow-col md:grid-cols-3  md:px-10 justify-center items-center bg-white pb-32">
-          <div className="relative h-full">
+        <div className="h-[79vh] md:h-[700px] -mt-12 md:pb-5 overflow-y-scroll overflow-x-scroll gap-y-[70%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-44 md:grid-flow-col md:grid-cols-3  md:px-10 justify-center items-center bg-white pb-32">
+          <div className="relative hover:mb-24 h-full">
             <Card image={samImage} title={'CEO'} name={'SAM MONROE'} />
           </div>
-          <div className="relative h-full">
+          <div className="relative hover:mb-24 h-full">
             <Card image={bossLady} title={'CEO'} name={'ot Monroe'} />
           </div>
-          <div className="relative h-full">
+          <div className="relative h-full hover:mb-24 md:mb-0 mb-12">
             <Card image={directorOfCollegeReadiness} title={'NOT'} name={'Sam Monroe'} />
           </div>
         </div>

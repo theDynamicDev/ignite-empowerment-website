@@ -10,12 +10,12 @@ const Team = () => {
   const lisaV = '/public/images/LisaV.png'
 
   return (
-    <section className=" flex relative justify-center top-10 md:top-32 items-center h-screen">
-      <div className=" justify-center  items-center md:flex-row flex-col w-full h-full">
-        <div className="relative  md:py-0 h-[170px] md:h-1/5 w-screen flex justify-center items-center">
-          <div className="flex justify-center items-center  mb-12  w-full h-screen max-h-[300px] -z-20 ">
-            <div className="flex absolute bg-gray-900/70 w-screen mb-12 h-screen max-h-56" />
-            <div className=" bg-forms-background bg-fixed ring-1 py-12 ring-green-500  mb-12  font-bold text-4xl md:text-6xl flex flex-col justify-center items-center w-full h-full max-h-56  ">
+    <section className=" flex relative justify-center top-28 md:top-32 bottom-32 items-center z-0 h-screen">
+      <div className=" justify-center mb-12 items-center md:flex-row flex-col w-full h-full">
+        <div className="relative  md:py-0 h-[170px]  w-screen flex justify-center items-center">
+          <div className="flex justify-center items-center   w-full h-screen md:max-h-80 max-h-[400px] -z-20 ">
+            <div className="flex absolute bg-gray-900/70 w-screen md:mb-20 md:-mt-1 mb-5 h-screen md:max-h-80 max-h-52 " />
+            <div className=" bg-forms-background bg-fixed bg-center ring-1 py-12 ring-green-500  md:mb-20 font-bold text-4xl md:text-6xl flex flex-col justify-center items-center w-full h-screen  md:max-h-80 max-h-56  ">
               <Text
                 css={{
                   textGradient: '45deg, $green600 -40%, $yellow600 50%, $red500 190% ',
@@ -25,18 +25,18 @@ const Team = () => {
               >
                 <span className=""> BOARD MEMBERS</span>
               </Text>
-              <span className="z-50 text-gray-700 underline">____</span>
+              <span className="z-50 text-white underline">____</span>
             </div>
           </div>
         </div>
-        <div className="h-[79vh] md:h-[700px] overflow-y-scroll overflow-x-scroll gap-y-[100%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-44 md:grid-flow-col md:grid-cols-3  md:px-10 justify-center items-center bg-white">
-          <div className="relative h-full">
+        <div className="h-screen max-h-[77vh] md:max-h-[95vh] md:h-[700px]  overflow-y-scroll overflow-x-scroll gap-y-[50%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-44 md:grid-flow-col md:grid-cols-3  md:px-10 justify-center items-center z-0 bg-white">
+          <div className="relative h-full hover:mb-24 -mt-12 md:mt-0">
             <Card image={boardChair} title={'CEO'} name={'Sam Monroe'} />
           </div>
-          <div className="relative h-full">
+          <div className="relative h-full hover:mb-24">
             <Card image={solaImage} title={'CEO'} name={'not Monroe'} />
           </div>
-          <div className="relative h-full">
+          <div className="relative h-full hover:mb-24 ">
             <Card image={lisaV} title={'NOT'} name={'Sam Monroe'} />
           </div>
         </div>
