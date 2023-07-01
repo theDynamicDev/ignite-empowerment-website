@@ -63,7 +63,7 @@ export default function Home() {
       >
         <RecentImpact />
       </section>
-      <section className="flex h-screen w-screen items-center justify-center">
+      <section className="flex h-screen w-screen pb-20 items-center justify-center">
         <MakeAnImpact />
       </section>
 

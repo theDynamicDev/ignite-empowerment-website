@@ -11,7 +11,9 @@ export default function Footer() {
             Arm our youth with an unstoppable mindset...
           </h2>
           <Link href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
-            <NavDonateButton>DONATE</NavDonateButton>
+            <NavDonateButton href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
+              DONATE
+            </NavDonateButton>
           </Link>
         </div>
         <div className="mb-8 space-y-2 md:mb-0 md:w-1/2">
