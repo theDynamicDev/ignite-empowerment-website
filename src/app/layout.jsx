@@ -17,7 +17,7 @@ export default function RootLayout({children}) {
         </header>
 
         <div id="content">{children}</div>
-        <footer className="mt-0">
+        <footer className="mt-0 z-10">
           <Footer />
         </footer>
       </body>

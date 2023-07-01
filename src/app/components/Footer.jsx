@@ -4,7 +4,7 @@ import Registration from '../register/page'
 import Link from 'next/link'
 export default function Footer() {
   return (
-    <div className="h-full w-screen justify-between bg-gray-800 px-8 py-12 text-white md:px-16">
+    <div className="h-full w-screen justify-between bg-gray-800 px-8 py-12 text-white md:px-16 z-10">
       <div className="md:flex md:justify-between">
         <div className="mb-8 space-y-2 md:mb-0 md:w-1/2">
           <h2 className="pb-4 text-lg font-semibold">
