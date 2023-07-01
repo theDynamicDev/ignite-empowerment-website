@@ -107,18 +107,18 @@ function Navbar() {
         onMouseLeave={handleMouseLeave}
       >
         <div className="flex max-w-[200px] items-center">
-          <div className=" z-10 flex-auto" />
-          <motion.div animate={controls} className="content">
-            <Link href="/">
+          <div className=" z-10 flex-auto ml-2" />
+          <Link href="/">
+            <motion.div animate={controls} className="content ml-.5">
               <Image
                 src={isHovered ? LOGOICON : LOGODARKICON}
                 alt="ignite logo"
                 height={90}
                 width={90}
-                className=" scroll-animate-spin min-h-[55px] min-w-[55px] "
+                className=" scroll-animate-spin min-h-[55px] min-w-[55px] z-50  "
               />
-            </Link>
-          </motion.div>
+            </motion.div>
+          </Link>
           <motion.div animate={{x: 100}} transition={{ease: 'easeOut', duration: 1}}>
             <Link href="/">
               <Image
@@ -132,6 +132,7 @@ function Navbar() {
           </motion.div>
           <div />
         </div>
+
         <div
           className={`invisible relative z-10 flex h-24 items-start text-xl font-bold leading-10 tracking-wider sm:visible`}
           onMouseEnter={handleMouseEnter}
