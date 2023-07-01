@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'forms-background': "url('../../public/images/wide_flame_bg_black.png')",
+        'transparent-flame': "url('../../public/images/trans-flame-1.png')",
       },
       colors: {
         cyanTheme: '#00FFFF',
