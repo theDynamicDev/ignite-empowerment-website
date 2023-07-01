@@ -57,13 +57,15 @@ export default function Home() {
       <div className="flex snap-mandatory snap-center md:mt-12 ">
         <WhoWeAre />
       </div>
-      <div className="mt-0 flex h-screen w-screen snap-mandatory snap-center  items-center justify-center">
+      <section
+        id="events"
+        className="mt-0 flex h-screen w-screen  snap-mandatory snap-center  items-center justify-center"
+      >
         <RecentImpact />
-      </div>
+      </section>
       <section className="flex h-screen w-screen items-center justify-center">
         <MakeAnImpact />
       </section>
-      <div></div>
 
       {/* Statistics? */}
       {/* Mobile menu */}

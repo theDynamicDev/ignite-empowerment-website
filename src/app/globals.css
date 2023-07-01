@@ -27,3 +27,8 @@ body {
   font-size: 18px;
  
 }
+.contactInput {
+  @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#b20ce0]/40
+  focus:text-[#34f5d5]/70
+}
+

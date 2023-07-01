@@ -10,7 +10,7 @@ function Registration() {
     <div
       className={classNames(
         'h-full w-screen', // element size & position
-        'mt-[16rem] rounded-xl', // styling
+        'md:mt-[16rem] mt-28 rounded-xl', // styling
         'md:flex md:flex-col md:items-center' // medium styling
       )}
     >
