@@ -31,7 +31,7 @@ export default function Hero() {
 
   const mobile = windowSize.width <= 768
   return (
-    <div className=" absolute justify-center max-w-fit overflow-hidden items-center -pr-2  z-20 ">
+    <div className=" absolute justify-center items-center -pr-2  z-20 ">
       <div className="flex relative flex-col justify-center overflow-hidden items-center ">
         <div className="flex  md:flex-none h-32 items-center overflow-hidden">
           <Text
@@ -41,7 +41,7 @@ export default function Hero() {
               size: '800px',
               marginTop: '0',
               height: '200px',
-              width: '100%',
+              width: '900%',
               paddingRight: '5px',
               paddingLeft: '5px',
               flex: 1,
@@ -54,7 +54,7 @@ export default function Hero() {
             }}
             width="70vw"
             weight="bold"
-            className=" md:flex-none overflow-hidden max-w-[100%] text-center text-white px-2 tracking-wide leading-10 indent-2 drop-shadow-xl"
+            className=" md:flex-none overflow-hidden max-w-full text-center text-white px-2 tracking-wide leading-10 indent-2 drop-shadow-xl"
           >
             IGNITE EMPOWERMENT
           </Text>

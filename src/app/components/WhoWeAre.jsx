@@ -80,12 +80,12 @@ function WhoWeAre() {
                 alt="image of founders"
                 width="550"
                 height="350"
-                className="md:absolute md:h-full md:object-contain  md:max-w-3xl  "
+                className="md:absolute md:h-full md:object-contain md:w-[550px] md:max-w-3xl  "
               />
-              <div className="absolute md:-z-10  mt-[108px] mr-10 w-3/4 -z-10 h-[282px] md:h-[454px] md:w-1/2 md:-left-20 right-[3px] border-8 border-yellow-300" />
+              <div className="absolute md:-z-10  mt-[108px] mr-10 w-3/4 -z-10 h-[282px] md:h-[454px] md:w-[560px] md:-left-20 right-[3px] border-8 border-yellow-300" />
             </div>
             <div className="flex  md:flex-col md:justify-between justify-center w-full items-center">
-              <div className="absolute w-32 md:-z-40 md:h-1/2 md:w-8/12 md:mr-5 mt-[393px] z-10  md:top-12  flex justify-center items-center border-4 border-cyan-400 " />
+              <div className="absolute w-32 md:-z-40 md:h-[550px] md:w-[800px] md:mr-5 mt-[393px] z-10  md:top-0  flex justify-center items-center border-4 border-cyan-400 " />
 
               <div className=" -mt-12 md:flex md:flex-col md:h-full  md:w-full md: md:justify-center">
                 <h1 className=" flex flex-row px-2 justify-center items-center md:flex-row md:mt-12 text-xl md:text-2xl text-white font-semibold ">
@@ -110,7 +110,7 @@ function WhoWeAre() {
           </div>
         </div>
 
-        <div className=" bg-green-500/70  h-[80vh] md:h-[55vh] w-[120vw] absolute mt-[25vh] overflow-hidden md:rotate-12  -z-30  " />
+        <div className=" bg-green-500/70  h-[80vh] md:h-[470px] w-[120vw] absolute mt-[280px] overflow-hidden md:rotate-12  -z-30  " />
       </motion.div>
     </motion.div>
   )
