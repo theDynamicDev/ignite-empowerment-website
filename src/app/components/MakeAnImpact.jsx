@@ -10,15 +10,15 @@ export default function MakeAnImpact() {
           textGradient: '45deg, $red700 -70%, $yellow600 40%, $green600 100%',
         }}
         weight="bold"
-        className="mb-6 text-4xl flex-auto justify-center flex flex-row items-center text-center md:mt-32 md:-mb-20  md:left-20  md:text-5xl text-white  md:items-center tracking-widest z-20 leading-10 indent-2 drop-shadow-lg md:shadow-gray"
+        className="mb-20 text-4xl flex-auto justify-center flex flex-row items-center text-center md:mt-32 md:-mb-20  md:left-20  md:text-5xl text-white  md:items-center tracking-widest z-20 leading-10 indent-2 drop-shadow-lg md:shadow-gray"
       >
         <span className="">MAKE AN IMPACT</span>
       </Text>
       <div className="flex flex-col md:flex-row md:justify-evenly max-h-full  justify-between bg-transparent items-center w-full h-full">
-        <div className="relative md:mt-32 md:space-y-36 space-y-[50vh]">
+        <div className="relative md:mt-32 md:space-y-36 space-y-[460px]">
           <div className="absolute shadow-lg -mt-2.5 -ml-3 md:ml-0 w-[310px] md:w-screen h-[950px]  md:h-screen md:max-h-[850px] rounded-lg bg-yellow-400 animate-pulse -z-20" />
           <div className="rounded-lg flex flex-col w-[280px] md:w-screen space-y-36  md: md:items-center md:[750px] h-[550px] ">
-            <div className="rounded-lg -mt-[50vh] md:-mt-32 w-[280px] h-[250px]">
+            <div className="rounded-lg -mt-[460px] md:-mt-32 w-[280px] h-[250px]">
               <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
               <stripe-buy-button

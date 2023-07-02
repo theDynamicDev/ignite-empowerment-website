@@ -61,7 +61,7 @@ const OurWork = () => {
       >
         <span className="">IGNITE. </span>
         <span className="">EMPOWER. </span>
-        <span className="">IMACT. </span>
+        <span className="">IMPACT. </span>
       </Text>
 
       {images.map((image, index) => (

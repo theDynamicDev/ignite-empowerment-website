@@ -84,10 +84,11 @@ function Navbar() {
   return (
     <div
       className={classNames(
-        'z-40 w-screen',
+        'z-40 w-full',
         'text-white hover:bg-white hover:text-black hover:shadow',
         'transition duration-500',
         'md:fixed md:left-0 md:top-0',
+        'overflow-hidden',
         scrollPosition > 0 && 'md:bg-white md:text-black md:shadow'
       )}
     >
@@ -99,8 +100,8 @@ function Navbar() {
         //   "hover:bg-white/70"
         // )}
         className={classNames(
-          'h-32 w-screen max-w-6xl',
-          'mx-auto flex flex-row  items-center justify-between px-2',
+          'h-32 w-full md:max-w-6xl',
+          'mx-auto flex flex-row items-center justify-between px-2',
           'text-inherit'
         )}
         onMouseEnter={handleMouseEnter}
@@ -145,7 +146,7 @@ function Navbar() {
           <MenuItem title="CONTACT US" address="/contact" Icon={BsFillInfoSquareFill} />
         </div>
         {/*  Search */}
-        <div className="flex-end -right-10 left-10 z-50 ml-5 flex items-center justify-between text-4xl md:invisible">
+        <div className="flex-end -right-10 left-10 z-50 ml-5 flex overflow-hidden items-center justify-between text-4xl md:invisible">
           {mobile ? (
             <DropDownMenu
               isOpen={isMenuOpen}

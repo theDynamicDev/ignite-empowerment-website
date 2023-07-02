@@ -43,11 +43,8 @@ const menuItems = [
 
 const DropDownMenu = ({isOpen, onToggleMenu, onMenuItemClick}) => {
   return (
-    <div className="z-40">
-      <button
-        className="focus:outline-none text-orange-400 relative right-5 z-50"
-        onClick={onToggleMenu}
-      >
+    <div className="z-50 overflow-hidden right-[25px] absolute">
+      <button className="focus:outline-none text-orange-400 relative z-50" onClick={onToggleMenu}>
         {isOpen ? <FiX /> : <FiMenu />}
       </button>
 
