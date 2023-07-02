@@ -1,11 +1,11 @@
 'use client'
 import LandingPage from './components/LandingPage'
 import OurWork from './components/OurWork'
-
+import {Suspense} from 'react'
 import WhoWeAre from './components/WhoWeAre'
 import RecentImpact from './components/RecentImpact'
 import MakeAnImpact from './components/MakeAnImpact'
-
+import Loading from './components/ui/Loading'
 import {loadStripe} from '@stripe/stripe-js'
 import React from 'react'
 
@@ -41,36 +41,38 @@ export default function Home() {
 
   // console.log('this is the client secret index =  ', clientSecret)
   return (
-    <div className="flex flex-col max-w-full">
-      <div className="snap-center ">
-        <LandingPage />
-      </div>
-      <div className="flex items-center justify-center">
-        {/* <Image
+    <Suspense fallback={<Loading />}>
+      <div className="flex flex-col max-w-full">
+        <div className="snap-center ">
+          <LandingPage />
+        </div>
+        <div className="flex items-center justify-center">
+          {/* <Image
       src="/public/images/flame-black-bg.png"
       alt="flame bg"
       fill
       className= " opacity-50 object-cover object-center absolute bottom-0 transform rotate-180 top-0"
       /> */}
-        <OurWork />
-      </div>
-      <div className="flex snap-mandatory snap-center md:mt-12 ">
-        <WhoWeAre />
-      </div>
-      <section
-        id="events"
-        className="mt-0 flex h-screen w-screen  snap-mandatory snap-center  items-center justify-center"
-      >
-        <RecentImpact />
-      </section>
-      <section className="flex h-screen w-screen pb-20 items-center justify-center">
-        <MakeAnImpact />
-      </section>
+          <OurWork />
+        </div>
+        <div className="flex snap-mandatory snap-center md:mt-12 ">
+          <WhoWeAre />
+        </div>
+        <section
+          id="events"
+          className="mt-0 flex h-screen w-screen  snap-mandatory snap-center  items-center justify-center"
+        >
+          <RecentImpact />
+        </section>
+        <section className="flex h-screen w-screen pb-20 items-center justify-center">
+          <MakeAnImpact />
+        </section>
 
-      {/* Statistics? */}
-      {/* Mobile menu */}
-      {/* Volunteer */}
-      {/* Footer */}
-    </div>
+        {/* Statistics? */}
+        {/* Mobile menu */}
+        {/* Volunteer */}
+        {/* Footer */}
+      </div>
+    </Suspense>
   )
 }

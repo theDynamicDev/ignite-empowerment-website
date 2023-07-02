@@ -84,11 +84,10 @@ function Navbar() {
   return (
     <div
       className={classNames(
-        'z-40 w-full',
+        'z-40 w-screen',
         'text-white hover:bg-white hover:text-black hover:shadow',
         'transition duration-500',
         'md:fixed md:left-0 md:top-0',
-        'overflow-hidden',
         scrollPosition > 0 && 'md:bg-white md:text-black md:shadow'
       )}
     >
@@ -100,17 +99,17 @@ function Navbar() {
         //   "hover:bg-white/70"
         // )}
         className={classNames(
-          'h-32 w-full md:max-w-6xl',
-          'mx-auto flex flex-row items-center justify-between px-2',
+          'h-32 w-screen max-w-6xl',
+          'mx-auto flex flex-row  items-center justify-between px-2',
           'text-inherit'
         )}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div className="flex max-w-[200px] items-center">
-          <div className=" z-10 flex-auto ml-2" />
-          <Link href="/">
-            <motion.div animate={controls} className="content ml-.5">
+          <div className=" z-10 flex-auto" />
+          <motion.div animate={controls} className="content">
+            <Link href="/">
               <Image
                 src={isHovered ? LOGOICON : LOGODARKICON}
                 alt="ignite logo"
@@ -118,8 +117,8 @@ function Navbar() {
                 width={90}
                 className=" scroll-animate-spin min-h-[55px] min-w-[55px] z-50  "
               />
-            </motion.div>
-          </Link>
+            </Link>
+          </motion.div>
           <motion.div animate={{x: 100}} transition={{ease: 'easeOut', duration: 1}}>
             <Link href="/">
               <Image
@@ -133,7 +132,6 @@ function Navbar() {
           </motion.div>
           <div />
         </div>
-
         <div
           className={`invisible relative z-10 flex h-24 items-start text-xl font-bold leading-10 tracking-wider sm:visible`}
           onMouseEnter={handleMouseEnter}
@@ -146,7 +144,7 @@ function Navbar() {
           <MenuItem title="CONTACT US" address="/contact" Icon={BsFillInfoSquareFill} />
         </div>
         {/*  Search */}
-        <div className="flex-end -right-10 left-10 z-50 ml-5 flex overflow-hidden items-center justify-between text-4xl md:invisible">
+        <div className="flex-end -right-10 left-10 z-50 ml-5 flex items-center justify-between text-4xl md:invisible">
           {mobile ? (
             <DropDownMenu
               isOpen={isMenuOpen}
