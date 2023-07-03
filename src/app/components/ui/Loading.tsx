@@ -6,9 +6,10 @@ import Image from 'next/image'
 const Loading = () => {
   return (
     <div className="loading">
-      <div className="spinner">
+      <div className="spinner animate-bounce">
         <Image src="/images/logo-icon-light-shadow.png" alt="Loading" width={120} height={120} />
       </div>
+      <h1> EVENTS INCOMING...</h1>
       <style jsx>{`
         .loading {
           display: flex;
@@ -16,6 +17,7 @@ const Loading = () => {
           align-items: center;
           height: 100vh;
           width: 100%;
+          flex-direction: column;
         }
 
         .spinner {

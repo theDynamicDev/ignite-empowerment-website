@@ -57,22 +57,22 @@ function WhoWeAre() {
   return (
     <motion.div
       animate={controls}
-      className="content  h-screen w-screen flex flex-col md:flex-row  md:justify-between mb-20 snap-center"
+      className="content  h-screen w-screen flex relative flex-col md:flex-row  md:justify-center md:items-center mb-20 snap-center"
     >
-      <motion.div className="  flex flex-col md:flex-row relative h-full w-full md:flex-wrap overflow-hidden items-center justify-center">
+      <motion.div className="  flex flex-col md:flex-row md:absolute h-full w-full md:flex-wrap overflow-hidden items-center justify-center">
         <Text
           css={{
             textGradient: '45deg, $red700 -70%, $yellow600 30%, $green600 60%, $cyan500 100%',
           }}
           weight="bold"
-          className=" text-4xl justify-center flex flex-row md:justify-center text-center bottom-20 lg:-top-20  md:left-20  md:text-5xl text-white  md:items-center tracking-wide leading-10 indent-2 drop-shadow-lg md:shadow-gray shadow-white"
+          className=" text-4xl justify-center flex flex-row md:justify-center text-center  lg:-top-20  md:left-20  md:text-5xl text-white  md:items-center tracking-wide leading-10 indent-2 drop-shadow-lg md:shadow-gray shadow-white"
         >
           <span className="">Who </span>
           <span className="">We </span>
           <span className="">Are </span>
         </Text>
 
-        <div className="  md:flex-wrap  md:justify-center    items-center justify-center  pl-2 flex ">
+        <div className="  md:flex-wrap md:justify-center    items-center justify-center  pl-2 flex ">
           <div className=" flex flex-col  md:justify-center  md:items-center md:bottom-0 md:flex-row">
             <div className="flex justify-center mb-32  items-center h-full w-full ">
               <Image
@@ -80,14 +80,13 @@ function WhoWeAre() {
                 alt="image of founders"
                 width="550"
                 height="350"
-                className="md:absolute md:h-full md:object-contain md:w-[550px] md:max-w-3xl  "
+                className="md:absolute md:h-full max-w-44 md:object-contain max-h-[550px] md:max-w-3xl  "
               />
-              <div className="absolute md:-z-10  mt-[108px] mr-10 w-3/4 -z-10 h-[282px] md:h-[454px] md:w-[560px] md:-left-20 right-[3px] border-8 border-yellow-300" />
+              <div className="absolute md:-z-10  mt-[135px] md:mt-[112px] mr-11 max-w-[340px] w-full -z-10 h-[300px] md:h-[454px] md:w-[50vw] md:max-w-[43vw] md:min-w-[530px]  md:-left-20 right-[3px] border-8 border-yellow-300" />
             </div>
             <div className="flex  md:flex-col md:justify-between justify-center w-full items-center">
-              <div className="absolute w-32 md:-z-40 md:h-[550px] md:w-[800px] md:mr-5 mt-[393px] z-10  md:top-0  flex justify-center items-center border-4 border-cyan-400 " />
-
-              <div className=" -mt-12 md:flex md:flex-col md:h-full  md:w-full md: md:justify-center">
+              <div className="relative  -mt-12 md:flex md:flex-col md:h-full  md:w-full  md:justify-center">
+                <div className="absolute invisible md:visible w-32 md:-z-40 md:h-[495px] md:w-[120vw] md:-left-[20vw] z-10  md:-top-12  flex justify-center items-center border-4 border-cyan-400 " />
                 <h1 className=" flex flex-row px-2 justify-center items-center md:flex-row md:mt-12 text-xl md:text-2xl text-white font-semibold ">
                   <p className=" ">
                     {' '}
@@ -110,7 +109,7 @@ function WhoWeAre() {
           </div>
         </div>
 
-        <div className=" bg-green-500/70  h-[80vh] md:h-[470px] w-[120vw] absolute mt-[280px] overflow-hidden md:rotate-12  -z-30  " />
+        <div className=" bg-green-500/70 w-full h-[80vh] md:h-1/2 md:w-[120vw] absolute mt-36 md:mt-72 lg:mt-52 overflow-hidden md:rotate-12  -z-30  " />
       </motion.div>
     </motion.div>
   )
