@@ -6,6 +6,7 @@ import RecentImpact from './components/RecentImpact.tsx'
 import MakeAnImpact from './components/MakeAnImpact'
 import React, {Suspense} from 'react'
 import Loading from './components/ui/Loading'
+import {Text} from '@nextui-org/react'
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 
@@ -55,13 +56,27 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <section
           id="events"
-          className="mt-0 flex h-screen w-screen  snap-mandatory snap-center  items-center justify-center"
+          className="top-10 flex h-screen w-screen mb-12 md:mb-20 snap-mandatory snap-center  items-center justify-center"
         >
           <RecentImpact />
         </section>
       </Suspense>
 
-      <section className="flex h-screen w-screen pb-20 items-center justify-center">
+      <section className="flex flex-col h-screen w-screen md:pb-80 md:bottom-0 md:mb-32 relative items-center justify-center">
+        <div className="flex w-full h-44 mt-0 -mb-10 md: md:-top-32 md:mb-0 md:absolute lg:my-10 flex-row ">
+          <Text
+            css={{
+              textGradient: '45deg, $red700 -70%, $yellow600 40%, $green600 100%',
+              display: 'flex',
+              width: '100%',
+            }}
+            weight="bold"
+            className="-mb-0 lg:my-[50px]  md:mb:32 text-4xl items-center flex justify-center w-full  md:text-5xl text-white  md:items-center tracking-widest z-50 leading-10 indent-2 drop-shadow-lg md:shadow-gray"
+          >
+            MAKE AN IMPACT
+          </Text>
+        </div>
+
         <MakeAnImpact />
       </section>
 
