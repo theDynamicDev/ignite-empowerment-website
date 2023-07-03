@@ -28,6 +28,7 @@ export default function MakeAnImpact() {
               <stripe-buy-button
                 buy-button-id="buy_btn_1NOx5HBTJQ94GAwCWRXXn0GO"
                 publishable-key={stripeKey}
+                target="_blank"
               ></stripe-buy-button>
             </div>
             <div className="w-full max-w-5xl ml-1 md:ml-0 rounded-lg md:overflow-visible overflow-x-scroll pb-52 md:pb-32 ">
@@ -35,6 +36,7 @@ export default function MakeAnImpact() {
               <stripe-pricing-table
                 pricing-table-id="prctbl_1NOxbTBTJQ94GAwCaiouZIS0"
                 publishable-key={stripeKey}
+                target="_blank"
               ></stripe-pricing-table>
             </div>
           </div>
