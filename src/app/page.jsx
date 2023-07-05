@@ -56,7 +56,7 @@ export default function Home() {
       <Suspense fallback={<Loading />}>
         <section
           id="events"
-          className="top-10 flex h-screen w-screen mb-12 md:mb-20 snap-mandatory snap-center  items-center justify-center"
+          className="top-10 flex h-screen w-screen mb-12 md:mb-20 snap-mandatory snap-center items-center justify-center"
         >
           <RecentImpact />
         </section>

@@ -10,11 +10,10 @@ export default function Footer() {
           <h2 className="pb-4 text-lg font-semibold">
             Arm our youth with an unstoppable mindset...
           </h2>
-          <Link href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
-            <NavDonateButton href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
-              DONATE
-            </NavDonateButton>
-          </Link>
+
+          <NavDonateButton href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk" target="_blank">
+            DONATE
+          </NavDonateButton>
         </div>
         <div className="mb-8 space-y-2 md:mb-0 md:w-1/2">
           <h2 className="text-lg font-semibold text-orange-500">Contact Us</h2>
@@ -30,7 +29,7 @@ export default function Footer() {
             {' '}
             <li>Registration</li>{' '}
           </Link>
-          <Link href="/ignite-book-club">
+          <Link href="/events">
             {' '}
             <li>Book Club</li>{' '}
           </Link>

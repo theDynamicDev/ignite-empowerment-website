@@ -19,7 +19,7 @@ export default function BlogList({posts}: Props) {
               <div className="relative w-full  h-96 drop-shadow-xl bg-transparent-flame bg-center bg-contain bg-no-repeat bg-opacity-5 group-hover:scale-105 transition-transform duration-200 ease-out">
                 <div className="absolute bg-black top-0 w-full h-full backdrop-blur-lg opacity-40 p-10 z-10" />
                 <Image
-                  className="object-contain object-center container opacity-90 z-20 lg:object-center"
+                  className="object-fix object-center container opacity-90 z-20 lg:object-center"
                   src={urlFor(post.mainImage).url()}
                   alt={post.author.name}
                   fill

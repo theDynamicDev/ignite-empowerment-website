@@ -37,7 +37,7 @@ const menuItems = [
   {name: 'Volunteer', link: '/volunteer'},
   {name: 'Events', link: '/events'},
   {name: 'Gallery', link: '/gallery'},
-  {name: 'Donate', link: 'https://buy.stripe.com/aEU7tpcfl13Q0sU5kk'},
+  {name: 'Donate', link: 'https://buy.stripe.com/aEU7tpcfl13Q0sU5kk', target: '_blank'},
   {name: 'Register', link: '/register'},
   {name: 'Contact Us', link: '/contact'},
 ]
@@ -59,7 +59,7 @@ const DropDownMenu = ({isOpen, onToggleMenu, onMenuItemClick}) => {
             variants={menuVariants}
           >
             {menuItems.map((item) => (
-              <Link href={item.link} key={item.name}>
+              <Link href={item.link} target={item?.target} key={item.name}>
                 <motion.div
                   variants={itemVariants}
                   className="text-white hover:text-orange-400 text-4xl font-semi-bold my-4 cursor-pointer"
