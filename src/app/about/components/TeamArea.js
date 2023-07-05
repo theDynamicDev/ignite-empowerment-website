@@ -8,9 +8,9 @@ const TeamArea = () => {
   const directorOfCollegeReadiness = '/public/images/Tiyaji_college-ready.png'
   const bossLady = '/public/images/vp-monroe.png'
   return (
-    <section className=" flex relative justify-center md:top-0 top-20  items-center h-screen">
-      <div className=" justify-center items-center bg-white md:flex-row flex-col w-full h-full">
-        <div className="relative  md:py-0 h-[170px] md:h-1/3 w-screen flex justify-center items-center bg-blue-400/40">
+    <section className=" flex relative justify-center md:top-0 top-0 items-center bg-white/90 pb-32 md:pb-0 h-screen">
+      <div className=" justify-center items-center pb-32 mt-0  md:flex-row flex-col w-full h-full">
+        <div className="relative pb-12 md:py-0 h-[190px] md:-mb-10 md:h-64 w-screen flex justify-center items-center ">
           <div className=" absolute object-cover h-full w-screen">
             <Image
               height={400}
@@ -28,7 +28,7 @@ const TeamArea = () => {
                   textGradient: '45deg, $red600 -100%, $yellow600 100% ',
                 }}
                 weight="bold"
-                className="text-4xl  justify-center flex flex-row items-center text-center   md:left-20  md:text-5xl md:items-center tracking-widest z-20 leading-10 indent-2 drop-shadow-lg md:shadow-gray "
+                className="text-4xl md:mt-10 justify-center flex flex-row items-center text-center   md:left-20  md:text-5xl md:items-center tracking-widest z-20 leading-10 indent-2 drop-shadow-lg md:shadow-gray "
               >
                 <span className="">OUR TEAM</span>
               </Text>
@@ -36,7 +36,7 @@ const TeamArea = () => {
             </div>
           </div>
         </div>
-        <div className="h-[79vh] md:h-[700px] -mt-12 md:pb-5  overflow-x-hidden gap-y-[70%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-[0%] md:grid-flow-col md:grid-cols-3  md:px-auto justify-center items-center bg-white pb-32">
+        <div className="h-[790px] md:h-[700px] -mt-20 md:pb-5 md:-mt-20 ml-5 overflow-x-hidden gap-y-[60%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-[0%] md:grid-flow-col md:grid-cols-3  md:px-auto justify-center items-center pb-32">
           <div className="relative hover:mb-24 h-full">
             <Card image={samImage} title={'PRESDENT/CEO'} name={'SAM MONROE'} />
           </div>

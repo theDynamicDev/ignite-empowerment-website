@@ -15,9 +15,7 @@ function Card({image, title, name}) {
         </div>
         <div className="text-white absolute -bottom-12 md:-bottom-20 bg-gradient-to-r from-orange-500 from-10% via-yellow-500 via-100%   py-3 justify-center rounded-b-3xl w-[115%] md:h-[30%] h-[90px] overflow-visible shadow-lg ring-2 ring-green-500 font-medium text-3xl items-center flex flex-col z-30 ">
           <h3 className="text-3xl leading-10 ">
-            <a href="#">
-              <span className="text-shadow-lg tracking-widest font-bold text-xl"> {name}</span>
-            </a>
+            <span className="text-shadow-lg tracking-widest font-bold text-xl"> {name}</span>
           </h3>
           <span className="text-sm tracking-[.1px]  font-thin">{title}</span>
         </div>
