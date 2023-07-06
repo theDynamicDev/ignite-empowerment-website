@@ -2,8 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 function Card({image, title, name}) {
   return (
-    <div className=" absolute h-[100%] hover:mb-24  md:min-h-[200px] md:top-20 mt-32 md:mt-8 max-h-[400px] left-[7.5vw] md:left-6 md: w-[320px]  z-30 rounded-t-full flex justify-center shadow-xl  bg-white/90">
-      <div className="  relative flex items-center  md:h-80 h-72  rounded-lg rounded-t-full max-w-[300px] z-10 justify-center ring-offset-green-700/30 ring-4 ring-yellow-300 bg-gradient-to-r from-cyan-400/80 from-10% via-white via-50% to-cyan-400/80 to-100% ">
+    <div classname="absolute container mt-12  md:scale-90 h-[100%] flex items-center justify-center shadow-xl  scale-[80%] z-30">
+      <div className=" absolute  h-full  md:min-h-full md:top-0 mt-0 md:mt-0 container scale-[80%]  -z-20 rounded-t-full  flex  bg-gradient-to-b from-white from-10% via-white via-50% to-transparent to-100%  " />
+
+      <div className="  relative flex items-center  md:h-80 h-72 hover:mb-24 rounded-lg rounded-t-full max-w-[300px] z-0 justify-center ring-offset-green-700/30 ring-4 ring-yellow-300 bg-gradient-to-r from-cyan-400/80 from-10% via-white via-50% to-cyan-400/80 to-100% ">
         <div className="  bg-white/30 h-full w-full container overflow-hidden relative rounded-t-full rounded-lg ">
           <Image
             height={600}

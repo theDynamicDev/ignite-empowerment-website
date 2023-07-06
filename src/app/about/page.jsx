@@ -5,7 +5,7 @@ import Layout from '../layout'
 import Team from './components/Team'
 const AboutPage = () => {
   return (
-    <div className=" z-10">
+    <div className="z-10">
       <TeamArea />
       <Team />
     </div>
