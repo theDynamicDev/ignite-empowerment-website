@@ -10,7 +10,7 @@ function Registration() {
     <div
       className={classNames(
         'h-full w-screen', // element size & position
-        'md:mt-[16rem] mt-28 rounded-xl', // styling
+        'md:mt-[16rem] mt-10 rounded-xl', // styling
         'md:flex md:flex-col md:items-center' // medium styling
       )}
     >
@@ -31,7 +31,8 @@ function Registration() {
             'flex flex-row items-center justify-center text-center',
             'indent-2 text-4xl leading-10 tracking-wide text-white',
             'md:shadow-gray md:items-center',
-            'drop-shadow-lg'
+            'drop-shadow-lg',
+            'z-30'
           )}
         >
           <span>CONSENT FORM</span>

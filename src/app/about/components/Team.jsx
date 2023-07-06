@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+
 import Card from './Card'
 import {Text} from '@nextui-org/react'
 const Team = () => {
@@ -15,7 +16,7 @@ const Team = () => {
         <div className="relative  md:py-0 h-[170px]  w-screen flex justify-center items-center">
           <div className="flex flex-col justify-center items-center w-screen  h-screen md:max-h-96 max-h-[400px] -z-20 ">
             <div className="flex absolute bg-gray-900/70 w-screen h-screen md:max-h-96 max-h-52 mb-12 md:mb-0 pb-0" />
-            <div className=" bg-forms-background bg-fixed bg-center ring-1  ring-green-500  md:mb-20 font-bold text-4xl md:text-6xl flex flex-col justify-center items-center w-full h-screen  md:max-h-96 max-h-52 mb-12 ">
+            <div className=" bg-forms-background bg-fixed bg-center ring-1 ring-green-500  md:mb-20 font-bold text-4xl md:text-6xl flex flex-col justify-center items-center w-full h-screen  md:max-h-96 max-h-52 mb-12 ">
               <Text
                 css={{
                   textGradient: '45deg, $green600 -40%, $yellow600 50%, $red500 190% ',

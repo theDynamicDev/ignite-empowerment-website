@@ -7,9 +7,9 @@ import {faTrash} from '@fortawesome/free-solid-svg-icons'
 import './form.css'
 import classNames from '../../../lib/classNames'
 const ChildForm = ({index, onRemove}) => (
-  <div className=" my-4 flex max-w-[600px] flex-col items-start justify-between md:mt-8 md:flex-row md:items-end md:justify-end">
+  <div className=" mb-4 flex max-w-[600px] flex-col items-start justify-between md:mt-8 md:flex-row md:items-end md:justify-end">
     <div className=" md:mx-5 md:flex md:flex-col">
-      <h3 className="font-extralight">Child - {index + 1}</h3>
+      <h3 className="font-normal ">Child - {index + 1}</h3>
       <label className="my-2 block text-sm font-bold" htmlFor={`childName-${index}`}>
         Child Full Name
       </label>
@@ -116,7 +116,19 @@ export default function ConsentForm() {
   }
 
   if (state.succeeded) {
-    return <p>Your Registration was Successful!</p>
+    return (
+      <div className="text-white relative bg-black/60 mx-auto h-[600px] w-full z-50 flex flex-col bg-center snap-center snap-mandatory content-center justify-center items-center text-3xl font-semi-bold leading-8 ">
+        <div className="flex flex-col justify-around text-center h-[200px] w-full">
+          <p className=" flex justify-center content-center  items-center mx-auto px-5 shadow-cyan-400 drop-shadow-lg">
+            THANK YOU FOR MAKING AN IMPACT!
+          </p>{' '}
+          <p className="flex justify-center content-center items-center mx-auto px-5 shadow-cyan-400 drop-shadow-lg">
+            {' '}
+            Your Registration was Successful!{' '}
+          </p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -126,13 +138,14 @@ export default function ConsentForm() {
       encType="multipart/form-data"
       className={classNames(
         'h-full w-screen max-w-screen-lg',
-        'my-5 rounded p-5 pt-10',
+        'my-5 rounded p-5 py-10',
         'flex flex-col content-around items-start justify-center',
         'md:items-center',
-        'bg-cyan-100/70'
+        'bg-cyan-100/80',
+        'z-20'
       )}
     >
-      <div className=" flex w-full max-w-6xl flex-col justify-center md:flex-wrap ">
+      <div className=" flex w-full max-w-6xl flex-col justify-center md:flex-wrap z-20">
         <div className="container  max-w-6xl  md:flex md:flex-col md:items-center md:justify-center">
           <h2 className="form-titles mb-3 text-xl font-bold md:flex">Programs of Interest</h2>
           <div className=" ">
@@ -171,7 +184,7 @@ export default function ConsentForm() {
           </div>
         </div>
 
-        <div className="md: my-2 md:flex md:w-full md:max-w-6xl md:flex-row md:items-start  md:justify-center">
+        <div className="md:my-5 md:flex md:w-full md:max-w-6xl md:flex-row md:items-start  md:justify-center">
           <div className="my-2 md:flex md:w-screen md:max-w-md md:flex-col md:justify-between">
             <h2 className="form-titles mb-4 text-xl font-bold md:flex md:justify-start">
               Registrant Information
@@ -222,10 +235,10 @@ export default function ConsentForm() {
                 </label>
                 <input
                   id="phoneNumber"
-                  placeholder="(444-444-4444)"
+                  placeholder="(123456789)"
                   type="tel"
                   name="phoneNumber"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                   required
                   className="focus:shadow-outline w-full max-w-sm appearance-none rounded border px-3 py-2 leading-tight  text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none"
                 />
@@ -233,8 +246,8 @@ export default function ConsentForm() {
             </div>
           </div>
 
-          <div className=" flex-col md:-mt-[0px] md:ml-4  md:flex md:items-start md:justify-between">
-            <h2 className=" form-titles mt-4 text-xl font-bold md:mt-0">Children</h2>
+          <div className=" flex-col flex  md:flex-col md:mt-5 md:ml-4  md:items-start md:justify-between">
+            <h2 className=" form-titles mt-4  text-xl font-bold md:mt-0">Children</h2>
             {children.map((_, index) => (
               <ChildForm key={index} index={index} onRemove={handleRemoveChild} />
             ))}
