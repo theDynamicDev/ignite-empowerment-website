@@ -18,7 +18,7 @@ function Registration() {
         className={classNames(
           'h-full w-full',
           'flex flex-col items-center justify-center',
-          '-from-10%  bg-opacity-20 bg-gradient-to-t from-transparent via-black via-50% to-transparent to-100%'
+          '-from-10%  bg-opacity-20 bg-gradient-to-t from-transparent via-black/70 via-50% to-transparent to-100%'
         )}
       >
         <Text

@@ -35,15 +35,15 @@ const TeamArea = () => {
           </div>
         </div>
       </div>
-      <div className=" justify-between relative flex items-center content-between md:flex-row md:content-center md:items-start md:h-1/2 space-y-7 md:space-y-0 md:mt-44 mt-[74px] bg-slate-100 md: h-[1000px] flex-col w-screen ">
+      <div className=" justify-between relative flex items-center content-between md:flex-row md:content-center md:items-start md:h-1/2 space-y-7 md:space-y-0 md:mt-44 mt-[74px] bg-slate-100 h-[1000px] flex-col w-screen ">
         {' '}
-        <div className="flex justify-center scale-95 items-center relative -mt-12 hover:scale-105 w-1/3 z-30 h-1/3">
+        <div className="flex  justify-center scale-95 items-center relative -mt-12 hover:scale-105 w-1/3 z-30 h-1/3">
           <Card image={samImage} title={'PRESDENT/CEO'} name={'SAM MONROE'} />
         </div>
-        <div className=" flex scale-[80%] justify-center items-center relative hover:scale-105 w-1/3 z-30 h-1/3">
+        <div className=" flex  scale-[80%] justify-center items-center relative hover:scale-105 w-1/3 z-30 h-1/3">
           <Card image={bossLady} title={'DIRECTOR OF IGNITE INSTITUTES'} name={'LISA MONROE'} />
         </div>
-        <div className=" flex scale-[80%] justify-center items-center relative  h-1/3 hover:scale-105 w-1/3 z-30 md:mb-0 mb-12">
+        <div className=" flex  scale-[80%] justify-center items-center relative  h-1/3 hover:scale-105 w-1/3 z-30 md:mb-0 mb-12">
           <Card
             image={directorOfCollegeReadiness}
             title={'DIRECTOR OF COLLEGE READINESS'}
