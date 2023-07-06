@@ -8,8 +8,8 @@ const TeamArea = () => {
   const directorOfCollegeReadiness = '/public/images/Tiyaji_college-ready.png'
   const bossLady = '/public/images/vp-monroe.png'
   return (
-    <section className=" flex relative flex-col justify-center content-center md:top-0  md:mt-0 items-start bg-slate-100 w-full  md:pb-0 md:h-full h-[1400px]">
-      <div className="relative  md:py-0 -mt-52 md:mt-0 h-[190px] md:h-72 w-full flex justify-center items-center ">
+    <section className=" flex relative flex-col justify-center content-center md:top-0  md:mt-0 items-start bg-slate-100 w-full  md:-pb-44 md:h-1/3 h-[1400px]">
+      <div className="relative  md:py-0 -mt-[155px] md:mt-0 h-[170px] md:h-72 w-full flex justify-center items-center ">
         <div className=" absolute object-cover h-full w-full">
           <Image
             height={400}
@@ -35,15 +35,15 @@ const TeamArea = () => {
           </div>
         </div>
       </div>
-      <div className=" justify-between relative flex items-center content-between md:flex-row md:content-center md:items-start md:h-[700px] space-y-7 md:space-y-0 md:mt-44 mt-12 bg-white h-[1000px] flex-col w-screen ">
+      <div className=" justify-between relative flex items-center content-between md:flex-row md:content-center md:items-start md:h-1/2 space-y-7 md:space-y-0 md:mt-44 mt-[74px] bg-slate-100 md: h-[1000px] flex-col w-screen ">
         {' '}
-        <div className="flex justify-center scale-110 items-center relative -mt-12 hover:scale-[115%] w-1/3 z-30 h-1/3">
+        <div className="flex justify-center scale-95 items-center relative -mt-12 hover:scale-105 w-1/3 z-30 h-1/3">
           <Card image={samImage} title={'PRESDENT/CEO'} name={'SAM MONROE'} />
         </div>
-        <div className=" flex justify-center items-center relative hover:scale-[110%] w-1/3 z-30 h-1/3">
+        <div className=" flex scale-[80%] justify-center items-center relative hover:scale-105 w-1/3 z-30 h-1/3">
           <Card image={bossLady} title={'DIRECTOR OF IGNITE INSTITUTES'} name={'LISA MONROE'} />
         </div>
-        <div className=" flex justify-center items-center relative  h-1/3 hover:scale-[110%] w-1/3 z-30 md:mb-0 mb-12">
+        <div className=" flex scale-[80%] justify-center items-center relative  h-1/3 hover:scale-105 w-1/3 z-30 md:mb-0 mb-12">
           <Card
             image={directorOfCollegeReadiness}
             title={'DIRECTOR OF COLLEGE READINESS'}

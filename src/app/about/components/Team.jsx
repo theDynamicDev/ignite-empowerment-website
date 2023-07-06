@@ -12,7 +12,7 @@ const Team = () => {
   const lindaWalker = '/public/images/linda.png'
   const drJanice = '/public/images/dr-stone.png'
   return (
-    <section className=" flex relative justify-start flex-col top-0 md:top-0 bottom-0 items-center md:pb-40 z-0 w-screen h-[2600px] md:h-[1300px] bg-slate-100">
+    <section className=" flex relative justify-start md:justify-center flex-col top-0 md:top-0 bottom-0 items-center md:pb-40 z-0 w-screen h-[2600px] md:h-[1300px] bg-slate-100">
       <div className=" justify-center  mb-0 items-center md:pb-32 md:flex-row flex-col w-screen h-screen">
         <div className="relative  md:py-0 h-[170px]  w-screen flex justify-center items-center">
           <div className="flex flex-col justify-center items-center w-screen  h-screen md:max-h-96 max-h-[400px] -z-20 ">
@@ -31,24 +31,24 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div className="absolute   px-3 md:h-full w-full mt-36 md:mt-0  bg-slate-100 ">
-          <div className=" flex flex-col md:flex-row md:flex-wrap relative container my-auto md:space-x-12 md:space-y-44 space-y-24  justify-around items-center md:bg-transparent z-0 ">
-            <div className="relative scale-110 flex justify-center items-center h-full hover:scale-[110%] -mt-12 md:mt-0">
+        <div className="absolute  md:flex-auto md:flex md:justify-center px-3 md:h-full w-full mt-36 md:mt-0  bg-slate-100 ">
+          <div className=" flex flex-col md:flex-row md:flex-wrap relative container my-auto md:space-x-12 md:space-y-24 space-y-12  content-around justify-evenly items-center md:bg-transparent z-0 ">
+            <div className="relative scale-95 flex justify-center  items-center h-full hover:scale-[100%] -mt-12 md:mt-0">
               <Card image={boardChair} title={'BOARD CHAIRMAN'} name={'TRAVIS BATEN'} />
             </div>
-            <div className="relative flex justify-center items-center h-full  hover:scale-[110%]">
+            <div className="relative flex scale-[80%] justify-center items-center h-full   hover:scale-[100%]">
               <Card image={solaImage} title={'MEMBER'} name={'SOLA TOJUOLA'} />
             </div>
-            <div className="relative flex justify-center items-center h-full hover:scale-[110%]   ">
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[100%]   ">
               <Card image={lisaV} title={'MEMBER'} name={'LISA VIGNOLA'} />
             </div>
-            <div className="relative flex justify-center items-center h-full hover:scale-[110%]  ">
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[100%]  ">
               <Card image={drJanice} title={'MEMBER'} name={'DR.JANICE STONE'} />
             </div>
-            <div className="relative flex justify-center items-center h-full hover:scale-[110%]  ">
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[100%]  ">
               <Card image={lindaWalker} title={'MEMBER'} name={'LINDA WALKER'} />
             </div>
-            <div className="relative flex justify-center items-center h-full hover:scale-[110%]  ">
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[110%]  ">
               <Card image={noel} title={'MEMBER'} name={'NOEL JOHNSON'} />
             </div>
           </div>
