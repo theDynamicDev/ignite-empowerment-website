@@ -7,8 +7,8 @@ import {faTrash} from '@fortawesome/free-solid-svg-icons'
 import './form.css'
 import classNames from '../../../lib/classNames'
 const ChildForm = ({index, onRemove}) => (
-  <div className=" mb-4 flex max-w-[600px] flex-col items-start justify-between md:mt-8 md:flex-row md:items-end md:justify-end">
-    <div className=" md:mx-5 md:flex md:flex-col">
+  <div className=" mb-4 flex max-w-[600px]  container items-start justify-between content-evenly md:mt-8 md:flex-row md:items-end md:justify-end">
+    <div className=" md:mx-5 flex container flex-col">
       <h3 className="font-normal ">Child - {index + 1}</h3>
       <label className="my-2 block text-sm font-bold" htmlFor={`childName-${index}`}>
         Child Full Name
@@ -21,7 +21,7 @@ const ChildForm = ({index, onRemove}) => (
       />
     </div>
 
-    <div className=" md:mt-7 md:flex md:flex-col md:justify-center ">
+    <div className=" md:mt-7 mt-1.5 flex mx-5 container flex-col justify-center ">
       <label htmlFor={`childAge-${index}`} className="my-2 block text-sm font-bold">
         Child Age
       </label>
@@ -29,11 +29,11 @@ const ChildForm = ({index, onRemove}) => (
         id={`childAge-${index}`}
         type="number"
         name={`childAge-${index}`}
-        className="focus:shadow-outline w-full max-w-[50px] appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none"
+        className="focus:shadow-outline w-full flex max-w-[50px] appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none"
       />
     </div>
     <div
-      className="focus:shadow-outline mt-3 max-w-xs rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none "
+      className="focus:shadow-outline md:mt-3 mt-[60px] max-w-xs rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none "
       onClick={() => onRemove(index)}
     >
       <FontAwesomeIcon icon={faTrash} />
@@ -145,7 +145,7 @@ export default function ConsentForm() {
         'z-20'
       )}
     >
-      <div className=" flex w-full max-w-6xl flex-col justify-center md:flex-wrap z-20">
+      <div className=" flex w-full relative max-w-6xl flex-col justify-center md:flex-wrap z-20">
         <div className="container  max-w-6xl  md:flex md:flex-col md:items-center md:justify-center">
           <h2 className="form-titles mb-3 text-xl font-bold md:flex">Programs of Interest</h2>
           <div className=" ">
@@ -246,24 +246,24 @@ export default function ConsentForm() {
             </div>
           </div>
 
-          <div className=" flex-col flex  md:flex-col md:mt-5 md:ml-4  md:items-start md:justify-between">
+          <div className=" flex-col flex  md:flex-col mt-5 ml-4  md:items-start md:justify-between">
             <h2 className=" form-titles mt-4  text-xl font-bold md:mt-0">Children</h2>
             {children.map((_, index) => (
               <ChildForm key={index} index={index} onRemove={handleRemoveChild} />
             ))}
-            <div className="md: md:flex md:w-full md:justify-center">
+            <div className="flex md:flex md:w-full md:justify-center">
               <button
                 type="button"
                 onClick={handleAddChild}
-                className="focus:shadow-outline my-3 flex max-w-xs rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none md:mr-4 md:w-full md:max-w-[118px] md:content-center md:justify-end"
+                className="focus:shadow-outline my-3 flex rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none mr-4 w-full max-w-[118px] content-center justify-end"
               >
                 Add Child
               </button>
             </div>
           </div>
         </div>
-        <div className="my-5 flex max-w-6xl flex-col items-center justify-center">
-          <div className="container md:flex md:w-full md:flex-col md:items-center">
+        <div className="my-5 md:container flex max-w-6xl flex-col items-center justify-center">
+          <div className=" container md:flex md:w-full md:flex-col md:items-center">
             <div className="mb-4  ">
               <h2 className="my-5 text-xl  font-bold  md:flex md:flex-row  md:justify-center">
                 Address
@@ -291,7 +291,7 @@ export default function ConsentForm() {
                 className="focus:shadow-outline w-screen max-w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none md:max-w-lg"
               />
             </div>
-            <div className="flex w-screen max-w-full flex-row md:flex md:justify-start">
+            <div className="flex w-screen max-w-full md:max-w-scrren flex-row md:flex md:justify-center">
               <div className="mb-4">
                 <label htmlFor="city" className="mb-2 block text-sm font-bold">
                   City
