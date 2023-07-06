@@ -1,19 +1,16 @@
-"use client";
-import React, { useState } from "react";
-import { useForm } from "@formspree/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+'use client'
+import React, {useState} from 'react'
+import {useForm} from '@formspree/react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faTrash} from '@fortawesome/free-solid-svg-icons'
 
-import "./form.css";
-import classNames from "../../../lib/classNames";
-const ChildForm = ({ index, onRemove }) => (
+import './form.css'
+import classNames from '../../../lib/classNames'
+const ChildForm = ({index, onRemove}) => (
   <div className=" my-4 flex max-w-[600px] flex-col items-start justify-between md:mt-8 md:flex-row md:items-end md:justify-end">
     <div className=" md:mx-5 md:flex md:flex-col">
       <h3 className="font-extralight">Child - {index + 1}</h3>
-      <label
-        className="my-2 block text-sm font-bold"
-        htmlFor={`childName-${index}`}
-      >
+      <label className="my-2 block text-sm font-bold" htmlFor={`childName-${index}`}>
         Child Full Name
       </label>
       <input
@@ -25,10 +22,7 @@ const ChildForm = ({ index, onRemove }) => (
     </div>
 
     <div className=" md:mt-7 md:flex md:flex-col md:justify-center ">
-      <label
-        htmlFor={`childAge-${index}`}
-        className="my-2 block text-sm font-bold"
-      >
+      <label htmlFor={`childAge-${index}`} className="my-2 block text-sm font-bold">
         Child Age
       </label>
       <input
@@ -46,83 +40,83 @@ const ChildForm = ({ index, onRemove }) => (
     </div>
     {/* <button type="button" className="mt-3   max-w-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={() => onRemove(index)}>Remove Child</button> */}
   </div>
-);
+)
 
 const USStates = [
-  "AL",
-  "AK",
-  "AZ",
-  "AR",
-  "CA",
-  "CO",
-  "CT",
-  "DE",
-  "FL",
-  "GA",
-  "HI",
-  "ID",
-  "IL",
-  "IN",
-  "IA",
-  "KS",
-  "KY",
-  "LA",
-  "ME",
-  "MD",
-  "MA",
-  "MI",
-  "MN",
-  "MS",
-  "MO",
-  "MT",
-  "NE",
-  "NV",
-  "NH",
-  "NJ",
-  "NM",
-  "NY",
-  "NC",
-  "ND",
-  "OH",
-  "OK",
-  "OR",
-  "PA",
-  "RI",
-  "SC",
-  "SD",
-  "TN",
-  "TX",
-  "UT",
-  "VT",
-  "VA",
-  "WA",
-  "WV",
-  "WI",
-  "WY",
-];
+  'AL',
+  'AK',
+  'AZ',
+  'AR',
+  'CA',
+  'CO',
+  'CT',
+  'DE',
+  'FL',
+  'GA',
+  'HI',
+  'ID',
+  'IL',
+  'IN',
+  'IA',
+  'KS',
+  'KY',
+  'LA',
+  'ME',
+  'MD',
+  'MA',
+  'MI',
+  'MN',
+  'MS',
+  'MO',
+  'MT',
+  'NE',
+  'NV',
+  'NH',
+  'NJ',
+  'NM',
+  'NY',
+  'NC',
+  'ND',
+  'OH',
+  'OK',
+  'OR',
+  'PA',
+  'RI',
+  'SC',
+  'SD',
+  'TN',
+  'TX',
+  'UT',
+  'VT',
+  'VA',
+  'WA',
+  'WV',
+  'WI',
+  'WY',
+]
 
 export default function ConsentForm() {
-  const [children, setChildren] = useState([{}]);
-  const [state, handleSubmit] = useForm("mayzrgda");
-  const [selectedState, setSelectedState] = useState("");
+  const [children, setChildren] = useState([{}])
+  const [state, handleSubmit] = useForm('mayzrgda')
+  const [selectedState, setSelectedState] = useState('')
 
   const handleStateChange = (event) => {
-    setSelectedState(event.target.value);
-  };
+    setSelectedState(event.target.value)
+  }
 
-  const handleAddChild = () => setChildren([...children, {}]);
+  const handleAddChild = () => setChildren([...children, {}])
   const handleRemoveChild = (index) => {
-    const newChildren = [...children];
-    newChildren.splice(index, 1);
-    setChildren(newChildren);
-  };
+    const newChildren = [...children]
+    newChildren.splice(index, 1)
+    setChildren(newChildren)
+  }
 
   const setNewValue = (newValue) => {
-    setSelectedState(newValue);
-  };
+    setSelectedState(newValue)
+  }
 
   if (state.succeeded) {
-    return <p>Your Registration was Successful!</p>;
+    return <p>Your Registration was Successful!</p>
   }
 
   return (
@@ -131,18 +125,16 @@ export default function ConsentForm() {
       method="POST"
       encType="multipart/form-data"
       className={classNames(
-        "h-full w-screen max-w-screen-lg",
-        "my-5 rounded p-5 pt-10",
-        "flex flex-col content-around items-start justify-center",
-        "md:items-center",
-        "bg-cyan-100/70"
+        'h-full w-screen max-w-screen-lg',
+        'my-5 rounded p-5 pt-10',
+        'flex flex-col content-around items-start justify-center',
+        'md:items-center',
+        'bg-cyan-100/70'
       )}
     >
       <div className=" flex w-full max-w-6xl flex-col justify-center md:flex-wrap ">
         <div className="container  max-w-6xl  md:flex md:flex-col md:items-center md:justify-center">
-          <h2 className="form-titles mb-3 text-xl font-bold md:flex">
-            Programs of Interest
-          </h2>
+          <h2 className="form-titles mb-3 text-xl font-bold md:flex">Programs of Interest</h2>
           <div className=" ">
             <div className="mb-5 grid w-48 appearance-none grid-flow-row grid-rows-3  gap-2 rounded-lg border px-2 py-5 font-medium outline-none drop-shadow-sm hover:border-blue-500 focus:shadow-outline-blue">
               <div className=" mr-3 rounded px-2">
@@ -186,10 +178,7 @@ export default function ConsentForm() {
             </h2>
             <div className="md:flex md:max-w-2xl md:flex-row  md:items-center md:justify-between">
               <div className="md my-2">
-                <label
-                  htmlFor="firstName"
-                  className="mb-2 block text-sm font-bold"
-                >
+                <label htmlFor="firstName" className="mb-2 block text-sm font-bold">
                   First Name
                 </label>
                 <input
@@ -201,10 +190,7 @@ export default function ConsentForm() {
                 />
               </div>
               <div className="my-2">
-                <label
-                  htmlFor="lastName"
-                  className="mb-2 block text-sm font-bold"
-                >
+                <label htmlFor="lastName" className="mb-2 block text-sm font-bold">
                   Last Name
                 </label>
                 <input
@@ -218,10 +204,7 @@ export default function ConsentForm() {
             </div>
             <div className="my-2 md:flex md:flex-row md:justify-between ">
               <div className="my-4">
-                <label
-                  htmlFor="emailAddress"
-                  className="mb-2 block text-sm font-bold"
-                >
+                <label htmlFor="emailAddress" className="mb-2 block text-sm font-bold">
                   Email Address
                 </label>
                 <input
@@ -234,10 +217,7 @@ export default function ConsentForm() {
               </div>
 
               <div className="mb-4 md:my-4">
-                <label
-                  htmlFor="phoneNumber"
-                  className="mb-2 block text-sm font-bold "
-                >
+                <label htmlFor="phoneNumber" className="mb-2 block text-sm font-bold ">
                   Phone Number
                 </label>
                 <input
@@ -254,15 +234,9 @@ export default function ConsentForm() {
           </div>
 
           <div className=" flex-col md:-mt-[0px] md:ml-4  md:flex md:items-start md:justify-between">
-            <h2 className=" form-titles mt-4 text-xl font-bold md:mt-0">
-              Children
-            </h2>
+            <h2 className=" form-titles mt-4 text-xl font-bold md:mt-0">Children</h2>
             {children.map((_, index) => (
-              <ChildForm
-                key={index}
-                index={index}
-                onRemove={handleRemoveChild}
-              />
+              <ChildForm key={index} index={index} onRemove={handleRemoveChild} />
             ))}
             <div className="md: md:flex md:w-full md:justify-center">
               <button
@@ -281,10 +255,7 @@ export default function ConsentForm() {
               <h2 className="my-5 text-xl  font-bold  md:flex md:flex-row  md:justify-center">
                 Address
               </h2>
-              <label
-                htmlFor="streetAddress"
-                className="mb-2 block  text-sm font-bold"
-              >
+              <label htmlFor="streetAddress" className="mb-2 block  text-sm font-bold">
                 Street Address
               </label>
               <input
@@ -292,14 +263,11 @@ export default function ConsentForm() {
                 type="text"
                 name="streetAddress"
                 required
-                className="focus:shadow-outline w-screen max-w-md appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none md:max-w-lg"
+                className="focus:shadow-outline w-screen max-w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none md:max-w-lg"
               />
             </div>
             <div className="mb-4">
-              <label
-                htmlFor="streetAddress"
-                className="mb-2 block  text-sm font-bold"
-              >
+              <label htmlFor="streetAddress" className="mb-2 block  text-sm font-bold">
                 Street Address 2
               </label>
               <input
@@ -307,10 +275,10 @@ export default function ConsentForm() {
                 type="text"
                 name="streetAddress"
                 required
-                className="focus:shadow-outline w-screen max-w-md appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none md:max-w-lg"
+                className="focus:shadow-outline w-screen max-w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none md:max-w-lg"
               />
             </div>
-            <div className="flex w-screen max-w-md flex-row md:flex md:justify-start">
+            <div className="flex w-screen max-w-full flex-row md:flex md:justify-start">
               <div className="mb-4">
                 <label htmlFor="city" className="mb-2 block text-sm font-bold">
                   City
@@ -350,11 +318,7 @@ export default function ConsentForm() {
           <option value="">Select a state</option>
           <SelectUSState className=" select-state" onChange={setNewValue}/>
         </select> */}
-                <input
-                  type="hidden"
-                  name="selectedState"
-                  value={selectedState}
-                />
+                <input type="hidden" name="selectedState" value={selectedState} />
               </div>
               <div className="mb-4">
                 <label htmlFor="zip" className="mb-2 block text-sm font-bold">
@@ -365,7 +329,7 @@ export default function ConsentForm() {
                   type="text"
                   name="zip"
                   required
-                  className=" focus:shadow-outline w-[150px] appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none"
+                  className=" focus:shadow-outline w-[130px] appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none"
                 />
               </div>
             </div>
@@ -376,13 +340,11 @@ export default function ConsentForm() {
           <div className="flex flex-col items-center justify-start">
             <h1 className="my-5 text-xl font-bold"> Terms and Conditions </h1>
             <p className="w-full max-w-3xl  rounded bg-white/80 p-5">
-              Attending an in-person or virtual Ignite Empowerment event or
-              program, you maybe in an area of video, photography, and audio. By
-              being a participant of the event or program you are consenting to
-              video, photography, and audio recording, and its release,
-              publication, or reproduction to be used for Ignite Empowerment’s
-              marketing purpose, and advertising on website, social media, and
-              printed material.
+              Attending an in-person or virtual Ignite Empowerment event or program, you maybe in an
+              area of video, photography, and audio. By being a participant of the event or program
+              you are consenting to video, photography, and audio recording, and its release,
+              publication, or reproduction to be used for Ignite Empowerment’s marketing purpose,
+              and advertising on website, social media, and printed material.
             </p>
           </div>
           <div className=" my-5 mr-3 rounded p-2">
@@ -394,10 +356,7 @@ export default function ConsentForm() {
               value="agree"
               className=" mr-1 border outline-none drop-shadow-sm focus:border-blue-500 focus:shadow-outline-blue "
             />
-            <label htmlFor="agree">
-              {" "}
-              I HAVE READ THE TERMS AND CONDITIONS AND I AGREE{" "}
-            </label>
+            <label htmlFor="agree"> I HAVE READ THE TERMS AND CONDITIONS AND I AGREE </label>
           </div>
         </div>
 
@@ -407,10 +366,10 @@ export default function ConsentForm() {
             disabled={state.submitting}
             className="focus:shadow-outline mt-3 w-full max-w-xs rounded bg-green-500 px-3 py-3 font-bold text-white hover:bg-green-700 focus:outline-none"
           >
-            {state.submitting ? "Registering..." : "Register"}
+            {state.submitting ? 'Registering...' : 'Register'}
           </button>
         </div>
       </div>
     </form>
-  );
+  )
 }
