@@ -87,7 +87,7 @@ const DropDownMenu = ({
                 return (
                   <motion.div
                     variants={itemVariants}
-                    className="text-white hover:text-orange-400 text-4xl font-semi-bold my-4 cursor-pointer"
+                    className="text-white flex flex-col relative items-center hover:underline hover:decoration-green-400  hover:text-orange-400  text-4xl font-semi-bold my-4 cursor-pointer"
                     onClick={() => onSubMenuClick(item)}
                     key={index}
                   >
@@ -96,7 +96,6 @@ const DropDownMenu = ({
                       <MobileSubMenu
                         subMenuItems={item.subMenuItems}
                         onMenuItemClick={onMenuItemClick}
-                        index={index}
                       />
                     )}
                   </motion.div>
