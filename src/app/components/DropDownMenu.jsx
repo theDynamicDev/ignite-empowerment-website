@@ -96,6 +96,7 @@ const DropDownMenu = ({
                       <MobileSubMenu
                         subMenuItems={item.subMenuItems}
                         onMenuItemClick={onMenuItemClick}
+                        index={index}
                       />
                     )}
                   </motion.div>
