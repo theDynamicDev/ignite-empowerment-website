@@ -14,19 +14,48 @@ import NavDonateButton from './ui/NavDonateButton'
 import DropDownMenu from './DropDownMenu'
 import classNames from '../../lib/classNames'
 import useScrollPosition from '../../lib/hooks/useScrollPostion'
+import DropDownSubMenu from './ui/DropDownSubMenu'
+import {set} from 'sanity'
 //going to animate log to stager in the image first then the words come from left. framer motion
 
 function Navbar() {
   const scrollPosition = useScrollPosition()
   const [isHovered, setIsHovered] = React.useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSubMenu, setActiveSubMenu] = useState(null)
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
+
+  const handleSubMenuClick = (item) => {
+    if (item.subMenuItems && !isSubMenuOpen) {
+      setActiveSubMenu(item)
+      setIsSubMenuOpen(true)
+    } else {
+      setActiveSubMenu(null)
+      setIsSubMenuOpen(false)
+    }
+    // isSubMenuOpen ? setActiveSubMenu(null): setActiveSubMenu(item)
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const handleMenuItemClick = () => {
-    setIsMenuOpen(false)
+  const handleMenuItemClick = (item) => {
+    // If the item has a submenu, we need to toggle it open or closed
+    if (item.subMenuItems) {
+      // If the submenu is already active, close it
+      if (activeSubMenu === item.name) {
+        setActiveSubMenu(null)
+      }
+      // Otherwise, set it as the active submenu
+      else {
+        setActiveSubMenu(item.name)
+      }
+    }
+    // If the item does not have a submenu, close the menu
+    else {
+      setIsMenuOpen(false)
+    }
   }
 
   const handleMouseEnter = () => {
@@ -140,7 +169,13 @@ function Navbar() {
           <MenuItem title="HOME" address="/" Icon={AiTwotoneHome} />
           <MenuItem title="EVENTS" address="/events" Icon={BsFillInfoSquareFill} />
           <MenuItem title="ABOUT" address="/about" Icon={BsFillInfoSquareFill} />
-          <MenuItem title="VOLUNTEER" address="/volunteer" Icon={BsFillInfoSquareFill} />
+          <DropDownSubMenu
+            title="GET INVOLVED"
+            isOpen={isMenuOpen}
+            onToggleMenu={toggleMenu}
+            onMenuItemClick={handleMenuItemClick}
+          />
+
           <MenuItem title="CONTACT US" address="/contact" Icon={BsFillInfoSquareFill} />
         </div>
         {/*  Search */}
@@ -150,6 +185,9 @@ function Navbar() {
               isOpen={isMenuOpen}
               onToggleMenu={toggleMenu}
               onMenuItemClick={handleMenuItemClick}
+              onSubMenuClick={handleSubMenuClick}
+              isActive={activeSubMenu}
+              isSubOpen={isSubMenuOpen}
             />
           ) : (
             <Link className="z-50" href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">

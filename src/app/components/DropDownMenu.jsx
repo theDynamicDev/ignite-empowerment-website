@@ -1,9 +1,9 @@
 'use client'
 import {useState} from 'react'
-import React from 'react'
 import {FiMenu, FiX} from 'react-icons/fi'
 import {motion, AnimatePresence} from 'framer-motion'
 import Link from 'next/link'
+import MobileSubMenu from './ui/MobileSubMenu'
 
 const menuVariants = {
   open: {
@@ -34,15 +34,27 @@ const itemVariants = {
 const menuItems = [
   {name: 'Home', link: '/'},
   {name: 'About', link: '/about'},
-  {name: 'Volunteer', link: '/volunteer'},
   {name: 'Events', link: '/events'},
-  {name: 'Gallery', link: '/gallery'},
+  {
+    name: 'Forms',
+    subMenuItems: [
+      {name: 'Volunteer', link: '/volunteer'},
+      {name: 'Register', link: '/register'},
+    ],
+  },
   {name: 'Donate', link: 'https://buy.stripe.com/aEU7tpcfl13Q0sU5kk', target: '_blank'},
   {name: 'Register', link: '/register'},
   {name: 'Contact Us', link: '/contact'},
 ]
 
-const DropDownMenu = ({isOpen, onToggleMenu, onMenuItemClick}) => {
+const DropDownMenu = ({
+  isOpen,
+  onToggleMenu,
+  onMenuItemClick,
+  onSubMenuClick,
+  isActive,
+  isSubOpen,
+}) => {
   return (
     <div className="z-50 overflow-hidden right-[25px] absolute">
       <button className="focus:outline-none text-orange-400 relative z-50" onClick={onToggleMenu}>
@@ -58,17 +70,37 @@ const DropDownMenu = ({isOpen, onToggleMenu, onMenuItemClick}) => {
             exit="closed"
             variants={menuVariants}
           >
-            {menuItems.map((item) => (
-              <Link href={item.link} target={item?.target} key={item.name}>
-                <motion.div
-                  variants={itemVariants}
-                  className="text-white hover:text-orange-400 text-4xl font-semi-bold my-4 cursor-pointer"
-                  onClick={onMenuItemClick}
-                >
-                  {item.name}
-                </motion.div>
-              </Link>
-            ))}
+            {menuItems.map((item) => {
+              if (item.link) {
+                return (
+                  <Link href={item.link} target={item?.target}>
+                    <motion.div
+                      variants={itemVariants}
+                      className="text-white hover:text-orange-400 text-4xl font-semi-bold my-4 cursor-pointer"
+                      onClick={onMenuItemClick}
+                    >
+                      {item.name}
+                    </motion.div>
+                  </Link>
+                )
+              } else {
+                return (
+                  <motion.div
+                    variants={itemVariants}
+                    className="text-white hover:text-orange-400 text-4xl font-semi-bold my-4 cursor-pointer"
+                    onClick={() => onSubMenuClick(item)}
+                  >
+                    {item.name}
+                    {isActive === item && (
+                      <MobileSubMenu
+                        subMenuItems={item.subMenuItems}
+                        onMenuItemClick={onMenuItemClick}
+                      />
+                    )}
+                  </motion.div>
+                )
+              }
+            })}
           </motion.div>
         )}
       </AnimatePresence>
