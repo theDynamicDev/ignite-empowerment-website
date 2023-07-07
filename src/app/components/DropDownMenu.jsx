@@ -70,10 +70,10 @@ const DropDownMenu = ({
             exit="closed"
             variants={menuVariants}
           >
-            {menuItems.map((item) => {
+            {menuItems.map((item, index) => {
               if (item.link) {
                 return (
-                  <Link href={item.link} target={item?.target}>
+                  <Link href={item.link} target={item?.target} key={index}>
                     <motion.div
                       variants={itemVariants}
                       className="text-white hover:text-orange-400 text-4xl font-semi-bold my-4 cursor-pointer"
@@ -89,6 +89,7 @@ const DropDownMenu = ({
                     variants={itemVariants}
                     className="text-white hover:text-orange-400 text-4xl font-semi-bold my-4 cursor-pointer"
                     onClick={() => onSubMenuClick(item)}
+                    key={index}
                   >
                     {item.name}
                     {isActive === item && (

@@ -18,11 +18,11 @@ const itemVariants = {
   },
 }
 
-const MobileSubMenu = ({subMenuItems, onMenuItemClick}) => {
+const MobileSubMenu = ({subMenuItems, onMenuItemClick, item}) => {
   return (
     <motion.div variants={itemVariants} className="subMenuItems-container -mt-1">
       {subMenuItems.map((item) => (
-        <Link href={item.link}>
+        <Link href={item.link} key={index}>
           <motion.div
             variants={itemVariants}
             className="text-green-500  underline decoration-cyan-400 hover:text-orange-400 text-2xl font-semi-bold my-4 cursor-pointer"
