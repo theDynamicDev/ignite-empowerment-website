@@ -14,7 +14,7 @@ const page = () => {
           textGradient: '45deg, $red700 -70%, $yellow600 30%, $green600 60%, $cyan500 100%',
         }}
         weight="bold"
-        className=" relative  top-48 md:top-20 w-screen-px-4 text-4xl md:flex-col my-24 md:my-0 z-40 flex text-center bottom-0 md:bottom-0  md:text-5xl text-white items-center justify-center tracking-wide leading-10 indent-2  drop-shadow-lg"
+        className=" relative  top-56 md:top-20 w-screen-px-4 text-4xl md:flex-col my-32  md:my-0 z-40 flex text-center bottom-0 md:bottom-0  md:text-5xl text-white items-center justify-center tracking-wide leading-10 indent-2  drop-shadow-lg"
       >
         <span className="">EXPERIENCE THE IMPACT. </span>
       </Text>
