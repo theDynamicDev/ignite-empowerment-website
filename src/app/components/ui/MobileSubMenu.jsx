@@ -22,7 +22,7 @@ const MobileSubMenu = ({subMenuItems, onMenuItemClick}) => {
   return (
     <motion.div
       variants={itemVariants}
-      className="subMenuItems-container relative flex flex-col space-y-5 justify-center container items-center text-center underline tracking-widest decoration-yellow-400 decoration-wavy hover:text-orange-400 uppercase content-center mt-3 "
+      className="subMenuItems-container relative flex flex-col space-y-5 justify-center container items-center text-center underline tracking-widest  decoration-yellow-400 decoration-wavy hover:text-orange-400 uppercase content-center mt-3 "
     >
       {subMenuItems.map((item, index) => (
         <Link href={item.link} key={index}>

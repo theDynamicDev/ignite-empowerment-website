@@ -39,6 +39,7 @@
     "formik": "^2.4.1",
     "framer-motion": "^10.12.16",
     "gifshot": "^0.4.5",
+    "lightbox.js-react": "^0.6.5",
     "next": "^13.4.7",
     "next-sanity": "^5.1.0",
     "node-sass": "^9.0.0",

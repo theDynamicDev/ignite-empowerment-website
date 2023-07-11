@@ -169,6 +169,7 @@ function Navbar() {
           <MenuItem title="HOME" address="/" Icon={AiTwotoneHome} />
           <MenuItem title="EVENTS" address="/events" Icon={BsFillInfoSquareFill} />
           <MenuItem title="ABOUT" address="/about" Icon={BsFillInfoSquareFill} />
+          <MenuItem title="GALLERY" address="/gallery" Icon={BsFillInfoSquareFill} />
           <DropDownSubMenu
             title="GET INVOLVED"
             isOpen={isMenuOpen}
@@ -190,13 +191,10 @@ function Navbar() {
               isSubOpen={isSubMenuOpen}
             />
           ) : (
-            <Link className="z-50" href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
+            <NavDonateButton href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk" target="_blank">
               {' '}
-              <NavDonateButton href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk">
-                {' '}
-                Donate{' '}
-              </NavDonateButton>
-            </Link>
+              Donate{' '}
+            </NavDonateButton>
           )}
         </div>
       </div>

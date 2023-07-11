@@ -20,6 +20,8 @@ module.exports = {
       backgroundImage: {
         'forms-background': "url('../../public/images/wide_flame_bg_black.png')",
         'transparent-flame': "url('../../public/images/trans-flame-1.png')",
+        'trans-flame-h-1': "url('../../public/images/trans-flame-h-2.png')",
+        'trans-flame-h-mobile': "url('../../public/images/trans-flame-h-mobile.png')",
       },
       colors: {
         cyanTheme: '#00FFFF',

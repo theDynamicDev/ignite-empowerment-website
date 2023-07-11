@@ -44,6 +44,7 @@ const menuItems = [
   },
   {name: 'Donate', link: 'https://buy.stripe.com/aEU7tpcfl13Q0sU5kk', target: '_blank'},
   {name: 'Register', link: '/register'},
+  {name: 'Gallery', link: '/gallery'},
   {name: 'Contact Us', link: '/contact'},
 ]
 

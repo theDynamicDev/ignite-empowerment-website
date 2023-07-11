@@ -75,7 +75,7 @@ const OurWork = () => {
             alt="Description"
             fill
             center
-            className={`lg:object-cover flex content-center  ${
+            className={`lg:object-fix flex content-center  ${
               isHovered ? 'transition-transform duration-500 ease-out-in' : 'opacity-100'
             }`}
             onMouseEnter={handleMouseEnter}
