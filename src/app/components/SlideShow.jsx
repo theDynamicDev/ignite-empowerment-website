@@ -39,8 +39,9 @@ const SlideShow = ({isOpen, close}) => {
         className="  container shadow-xl shadow-cyan-400/20 overflow-x-hidden max-h-[70%] md:max-h-full lg:max-h-full space-y-4 z-40 md:space-x-4 md:space-y-0 flex  md:flex-row flex-col mx-auto "
         onClose={close}
       >
-        {images.map((image) => (
+        {images.map((image, index) => (
           <Image
+            key={index}
             src={image.src}
             alt={image.alt}
             height={500}
