@@ -1,9 +1,11 @@
 'use client'
-import React from 'react'
+import React, {useState} from 'react'
 import SlideShow from '../components/SlideShow'
 import {Text} from '@nextui-org/react'
+
 const page = () => {
-  let [isOpen, setIsOpen] = React.useState(false)
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  let [isOpen, setIsOpen] = useState(false)
   const onClose = () => {
     setIsOpen(false)
   }

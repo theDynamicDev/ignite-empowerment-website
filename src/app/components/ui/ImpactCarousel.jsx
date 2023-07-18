@@ -105,14 +105,14 @@ export default function ImpactCarousel({posts}) {
               href={`https://www.ignite-empowerment.org/events/${post.slug.current}`}
               key={post._id}
             >
-              <div className=" md:my-auto md:mx-auto hover:rotate-2 hover:overflow-visible hover:z-50 h-full max-h-[460px] rounded-lg md:min-w-[305px] flex-auto overflow-hidden justify-center shadow-lg md:shadow-none items-center ">
-                <div className="rounded-lg object-cover flex flex-col max-h-[500px]  md:px-5 justify-center self-center container px-2 items-center overflow-hidden  transform hover:scale-105 transition-transform duration-200 ease-in-out">
+              <div className=" md:my-auto md:mx-auto hover:rotate-2 hover:overflow-visible hover:z-50 h-full max-h-[460px] rounded-lg md:min-w-[250px] flex-auto overflow-hidden justify-center shadow-lg md:shadow-none items-center ">
+                <div className="rounded-lg object-cover flex flex-col max-h-[500px]  md:px-20 justify-center self-center container px-2 items-center overflow-hidden  transform hover:scale-105 transition-transform duration-200 ease-in-out">
                   <Image
                     src={urlFor(post.mainImage).url()}
                     alt="Event image"
                     width={500}
                     height={400}
-                    className=" max-h-[200px] md:min-h-[275px]  lg:max-h-[200px] max-w-xl w-full  object-fix rounded-md  drop-shadow-lg "
+                    className=" max-h-[200px] md:min-h-[275px]  lg:max-h-[210px]  w-full  object-fix rounded-md  drop-shadow-lg "
                   />
                   <div className="flex-col max-h-44 bottom-0 w-full bg-opacity-50 z-30 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between">
                     <div className="font-bold text-xl flex flex-col overflow-hidden items-start justify-evenly mb-2">
