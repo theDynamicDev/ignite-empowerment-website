@@ -1,0 +1,42 @@
+.select-state {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='7' height='7' viewBox='0 0 10 10'><polygon points='0,0 10,0 5,10' fill='black'/></svg>")
+    no-repeat right 10px center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 30px 5px 10px; /* 30px right padding to accommodate the arrow */
+  width: 100%;
+  height: 41px;
+  font-size: 16px;
+  color: #333;
+}
+
+.select-state:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.select-state:focus {
+  outline: none;
+  border: 1px solid #007bff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-titles {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  margin-bottom: 1.5rem;
+}
+.mask::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+}

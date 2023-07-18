@@ -14,19 +14,48 @@ import NavDonateButton from './ui/NavDonateButton'
 import DropDownMenu from './DropDownMenu'
 import classNames from '../../lib/classNames'
 import useScrollPosition from '../../lib/hooks/useScrollPostion'
+import DropDownSubMenu from './ui/DropDownSubMenu'
+import {set} from 'sanity'
 //going to animate log to stager in the image first then the words come from left. framer motion
 
 function Navbar() {
   const scrollPosition = useScrollPosition()
   const [isHovered, setIsHovered] = React.useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSubMenu, setActiveSubMenu] = useState(null)
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false)
+
+  const handleSubMenuClick = (item) => {
+    if (item.subMenuItems && !isSubMenuOpen) {
+      setActiveSubMenu(item)
+      setIsSubMenuOpen(true)
+    } else {
+      setActiveSubMenu(null)
+      setIsSubMenuOpen(false)
+    }
+    // isSubMenuOpen ? setActiveSubMenu(null): setActiveSubMenu(item)
+  }
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const handleMenuItemClick = () => {
-    setIsMenuOpen(false)
+  const handleMenuItemClick = (item) => {
+    // If the item has a submenu, we need to toggle it open or closed
+    if (item.subMenuItems) {
+      // If the submenu is already active, close it
+      if (activeSubMenu === item.name) {
+        setActiveSubMenu(null)
+      }
+      // Otherwise, set it as the active submenu
+      else {
+        setActiveSubMenu(item.name)
+      }
+    }
+    // If the item does not have a submenu, close the menu
+    else {
+      setIsMenuOpen(false)
+    }
   }
 
   const handleMouseEnter = () => {
@@ -47,7 +76,7 @@ function Navbar() {
     setScrollY(window.scrollY)
     controls.start({
       rotate: scrollY / 0.5, // you can adjust the rate of rotation here
-      transition: {duration: 0.5},
+      transition: {duration: 0.8},
     })
   }
 
@@ -84,7 +113,7 @@ function Navbar() {
   return (
     <div
       className={classNames(
-        'z-30 w-screen',
+        'z-40 w-screen',
         'text-white hover:bg-white hover:text-black hover:shadow',
         'transition duration-500',
         'md:fixed md:left-0 md:top-0',
@@ -115,7 +144,7 @@ function Navbar() {
                 alt="ignite logo"
                 height={90}
                 width={90}
-                className=" scroll-animate-spin min-h-[55px] min-w-[55px] "
+                className=" scroll-animate-spin min-h-[55px] min-w-[55px] z-50  "
               />
             </Link>
           </motion.div>
@@ -140,7 +169,14 @@ function Navbar() {
           <MenuItem title="HOME" address="/" Icon={AiTwotoneHome} />
           <MenuItem title="EVENTS" address="/events" Icon={BsFillInfoSquareFill} />
           <MenuItem title="ABOUT" address="/about" Icon={BsFillInfoSquareFill} />
-          <MenuItem title="VOLUNTEER" address="/volunteer" Icon={BsFillInfoSquareFill} />
+          <MenuItem title="GALLERY" address="/gallery" Icon={BsFillInfoSquareFill} />
+          <DropDownSubMenu
+            title="GET INVOLVED"
+            isOpen={isMenuOpen}
+            onToggleMenu={toggleMenu}
+            onMenuItemClick={handleMenuItemClick}
+          />
+
           <MenuItem title="CONTACT US" address="/contact" Icon={BsFillInfoSquareFill} />
         </div>
         {/*  Search */}
@@ -150,9 +186,15 @@ function Navbar() {
               isOpen={isMenuOpen}
               onToggleMenu={toggleMenu}
               onMenuItemClick={handleMenuItemClick}
+              onSubMenuClick={handleSubMenuClick}
+              isActive={activeSubMenu}
+              isSubOpen={isSubMenuOpen}
             />
           ) : (
-            <NavDonateButton> Donate </NavDonateButton>
+            <NavDonateButton href="https://buy.stripe.com/aEU7tpcfl13Q0sU5kk" target="_blank">
+              {' '}
+              Donate{' '}
+            </NavDonateButton>
           )}
         </div>
       </div>

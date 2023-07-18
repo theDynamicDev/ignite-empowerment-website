@@ -10,5 +10,3 @@ export const client = createClient({
   apiVersion, // https://www.sanity.io/docs/api-versioning
   useCdn: false, // if you're using ISR or only static generation at build time then you can set this to `false` to guarantee no stale content
 })
-
-const data = await client.fetch(groq`*[]`)

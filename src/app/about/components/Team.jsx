@@ -1,55 +1,60 @@
-"use client"
-import React from 'react';
+'use client'
+import React from 'react'
 
-import Image from 'next/image';
-import Card from './Card';
-import { Text } from "@nextui-org/react";
+import Card from './Card'
+import {Text} from '@nextui-org/react'
 const Team = () => {
-    const samImage = "/public/images/CEO-SAM.png";
-    return (
-        <section className=" flex relative justify-center  top-10 md:top-32 items-center h-screen">
-        <div className=" justify-center  items-center md:flex-row flex-col w-full h-full">
-            <div className="relative  md:py-0 h-[170px] md:h-1/5 w-screen flex justify-center items-center">
-         
-                <div className="flex justify-center items-center transparent w-full h-full ">
-                <div className='flex absolute bg-gray-900/70 w-screen h-full'/>
-                    <div className="  font-bold text-4xl md:text-6xl flex flex-col justify-center items-center w-full h-full z-30 container">
-                       
-                    <Text
-          
-          css={{
-            textGradient: "45deg, $green600 -40%, $yellow600 50%, $red500 190% ",
-          }}
-          weight="bold"
-          className="text-4xl  justify-center flex flex-row items-center text-center md:left-20  md:text-5xl md:items-center tracking-widest z-20 leading-10 indent-2 drop-shadow-lg md:shadow-gray "
-         >
-         
-           <span className=''> BOARD MEMBERS</span> 
-           
-      
-         </Text> 
-                        <span className="z-50 text-white/60 underline">____</span>
-                    </div>
-                </div>
+  const solaImage = '/public/images/Sola_Tojuola.png'
+  const boardChair = '/public/images/board-chair.png'
+  const lisaV = '/public/images/LisaV.png'
+  const noel = '/public/images/Noel-Johnson.png'
+  const lindaWalker = '/public/images/linda.png'
+  const drJanice = '/public/images/dr-stone.png'
+  return (
+    <section className=" flex relative justify-start md:justify-center flex-col top-0 md:top-0 bottom-0 items-center md:pb-40 lg:pb-44 z-0 w-screen h-[2400px] md:h-[1300px] bg-slate-100">
+      <div className=" justify-center  mb-0 items-center md:pb-32 lg:pb-32 md:flex-row flex-col w-screen h-screen">
+        <div className="relative  md:py-0 h-[170px]  w-screen flex justify-center items-center">
+          <div className="flex flex-col justify-center items-center w-screen  h-screen md:max-h-96 max-h-[400px] -z-20 ">
+            <div className="flex absolute bg-gray-900/70 w-screen h-screen md:max-h-96  max-h-52 mb-12 md:mb-0 pb-0" />
+            <div className=" bg-forms-background bg-fixed bg-center ring-1 ring-green-500  md:mb-20 font-bold text-4xl md:text-6xl flex flex-col justify-center items-center w-full h-screen  md:max-h-96 max-h-52 mb-12 ">
+              <Text
+                css={{
+                  textGradient: '45deg, $green600 -40%, $yellow600 50%, $red500 190% ',
+                }}
+                weight="bold"
+                className="text-4xl  justify-center flex flex-row items-center text-center md:left-20  md:text-5xl md:items-center tracking-widest z-20 leading-10 indent-2 drop-shadow-lg md:shadow-gray "
+              >
+                <span className=""> BOARD MEMBERS</span>
+              </Text>
+              <span className="z-50 text-white underline">____</span>
             </div>
-            <div className="h-[79vh] md:h-[570px] overflow-y-scroll overflow-x-hidden gap-y-[100%] grid-flow-row grid grid-cols-1 grid-rows-3 md:grid-rows-1 md:gap-x-44 md:grid-flow-col md:grid-cols-3  md:px-10 justify-center items-center bg-white">
-                <div className='relative h-full'>
-                <Card image={samImage} title={"CEO"} name={"Sam Monroe"}/>
-                </div>
-                <div className='relative h-full'>
-                <Card image={samImage} title={"CEO"} name={"not Monroe"}/>
-                </div>
-                <div className='relative h-full'>
-                <Card image={samImage} title={"NOT"} name={"Sam Monroe"}/>
-                </div>
-         
-            
-           
-                
-            </div>
+          </div>
         </div>
+        <div className="absolute  flex-auto flex justify-center px-3 h-full w-full mt-0 md:mt-0 lg:mt-0  bg-slate-100 ">
+          <div className=" flex flex-col md:flex-row md:flex-wrap lg:flex-row lg:flex-wrap relative container my-auto md:space-x-12 md:space-y-24 lg:mt-7 lg:space-y-24 space-y-12  content-around justify-evenly items-center md:bg-transparent lg:bg-tranparent z-0 ">
+            <div className="relative scale-95 flex justify-center  items-center h-full hover:scale-[100%] -mt-12 md:mt-0">
+              <Card image={boardChair} title={'BOARD CHAIRMAN'} name={'TRAVIS BATEN'} />
+            </div>
+            <div className="relative flex scale-[80%] justify-center items-center h-full   hover:scale-[100%]">
+              <Card image={solaImage} title={'MEMBER'} name={'SOLA TOJUOLA'} />
+            </div>
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[100%]   ">
+              <Card image={lisaV} title={'MEMBER'} name={'LISA VIGNOLA'} />
+            </div>
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[100%]  ">
+              <Card image={drJanice} title={'MEMBER'} name={'DR.JANICE STONE'} />
+            </div>
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[100%]  ">
+              <Card image={lindaWalker} title={'MEMBER'} name={'LINDA WALKER'} />
+            </div>
+            <div className="relative flex scale-[80%] justify-center items-center h-full  hover:scale-[110%]  ">
+              <Card image={noel} title={'MEMBER'} name={'NOEL JOHNSON'} />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    );
-};
+  )
+}
 
-export default Team;
+export default Team
