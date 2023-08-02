@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from 'react'
-import {useForm} from '@formspree/react'
+import {useForm, ValidationError } from '@formspree/react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
 
@@ -97,7 +97,7 @@ const USStates = [
 
 export default function ConsentForm() {
   const [children, setChildren] = useState([{}])
-  const [state, handleSubmit] = useForm('mayzrgda')
+  const [state, handleSubmit] = useForm('xvojzvel')
   const [selectedState, setSelectedState] = useState('')
 
   const handleStateChange = (event) => {
@@ -146,7 +146,7 @@ export default function ConsentForm() {
       )}
     >
       <div className=" flex w-full relative max-w-6xl flex-col justify-center md:flex-wrap z-20">
-        <div className="container  max-w-6xl  md:flex md:flex-col md:items-center md:justify-center">
+        <div className="container max-w-6xl md:flex md:flex-col md:items-center md:justify-center">
           <h2 className="form-titles mb-3 text-xl font-bold md:flex">Programs of Interest</h2>
           <div className=" ">
             <div className="mb-5 grid w-48 appearance-none grid-flow-row grid-rows-3  gap-2 rounded-lg border px-2 py-5 font-medium outline-none drop-shadow-sm hover:border-blue-500 focus:shadow-outline-blue">
@@ -184,7 +184,7 @@ export default function ConsentForm() {
           </div>
         </div>
 
-        <div className="md:my-5 md:flex md:w-full md:max-w-6xl md:flex-row md:items-start  md:justify-center">
+        <div className="md:my-5 md:flex md:w-full md:max-w-6xl md:flex-row md:items-start md:justify-center">
           <div className="my-2 md:flex md:w-screen md:max-w-md md:flex-col md:justify-between">
             <h2 className="form-titles mb-4 text-xl font-bold md:flex md:justify-start">
               Registrant Information
@@ -217,16 +217,21 @@ export default function ConsentForm() {
             </div>
             <div className="my-2 md:flex md:flex-row md:justify-between ">
               <div className="my-4">
-                <label htmlFor="emailAddress" className="mb-2 block text-sm font-bold">
-                  Email Address
+                <label htmlFor="email" className="mb-2 block text-sm font-bold">
+                  Email 
                 </label>
                 <input
-                  id="emailAddress"
+                  id="email"
                   type="email"
-                  name="emailAddress"
+                  name="email"
                   required
                   className="focus:shadow-outline w-full max-w-sm appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none"
                 />
+                   <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
               </div>
 
               <div className="mb-4 md:my-4">

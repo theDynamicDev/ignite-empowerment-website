@@ -3,6 +3,7 @@ import 'lightbox.js-react/dist/index.css'
 import {SlideshowLightbox, initLightboxJS} from 'lightbox.js-react'
 import React from 'react'
 import Image from 'next/image'
+import urlFor from '../../lib/urlFor'
 const SlideShow = ({isOpen, close}) => {
   React.useEffect(() => {
     initLightboxJS('7ACF-5C89-7F26-30C8', 'Individual')
@@ -10,16 +11,16 @@ const SlideShow = ({isOpen, close}) => {
 
   const images = [
     {
-      src: 'https://source.unsplash.com/sQZ_A17cufs/549x711',
-      alt: 'Mechanical keyboard with white keycaps.',
+      src: 'https://github.com/theDynamicDev/ignite-empowerment-website/assets/86843762/c678d7d5-b1c3-4fb2-a732-a678103ca773',
+      alt: 'Recognition Event',
     },
     {
-      src: 'https://source.unsplash.com/rsAeSMzOX9Y/768x512',
-      alt: 'Mechanical keyboard with white, pastel green and red keycaps.',
+      src: 'https://github.com/theDynamicDev/ignite-empowerment-website/assets/86843762/83df80f3-a660-4030-b880-ce5c3e4f538f',
+      alt: 'Self Introductions',
     },
     {
-      src: 'https://source.unsplash.com/Z6SXt1v5tP8/768x512',
-      alt: 'Mechanical keyboard with white, pastel pink, yellow and red keycaps.',
+      src: 'https://github.com/theDynamicDev/ignite-empowerment-website/assets/86843762/ceb5a105-0f60-4a14-801c-16db02e08f0e',
+      alt: 'Florida League of Cities Youth Council Event',
     },
   ]
 
@@ -36,7 +37,7 @@ const SlideShow = ({isOpen, close}) => {
         thumbnailBorder="yellow"
         iconColor="green"
         open={isOpen}
-        className="  container shadow-xl shadow-cyan-400/20 overflow-x-hidden max-h-[70%] md:max-h-full lg:max-h-full space-y-4 z-40 md:space-x-4 md:space-y-0 flex  md:flex-row flex-col mx-auto "
+        className="  shadow-lg shadow-cyan-400/10 overflow-x-hidden max-h-[70%] md:max-h-full lg:max-h-full space-y-4 z-40 md:space-x-4 md:space-y-0 flex  md:flex-row flex-col mx-auto "
         onClose={close}
       >
         {images.map((image, index) => (
@@ -48,7 +49,7 @@ const SlideShow = ({isOpen, close}) => {
             width={500}
             data-lightboxjs="lightbox1"
             quality={80}
-            className="w-full drop-shadow-lg drop-shadow-cyan-400 ring-1 ring-gray-800 shadow-white/20 shadow-lg rounded"
+            className="object-cover container drop-shadow-lg drop-shadow-cyan-400 ring-1 ring-gray-800 shadow-white/20 shadow-lg rounded"
           />
         ))}
       </SlideshowLightbox>

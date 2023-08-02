@@ -62,7 +62,7 @@ const USStates = [
 ]
 
 export default function VolunteerForm() {
-  const [state, handleSubmit] = useForm('mayzrgda')
+  const [state, handleSubmit] = useForm('xvojzvel')
   const [selectedState, setSelectedState] = useState('')
 
   const handleStateChange = (event) => {
@@ -259,7 +259,7 @@ export default function VolunteerForm() {
                 id="streetAddress"
                 type="text"
                 name="streetAddress"
-                required
+                
                 className="focus:shadow-outline w-screen max-w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow outline-none focus:border-blue-500 focus:shadow-outline-blue focus:outline-none md:max-w-lg"
               />
             </div>
