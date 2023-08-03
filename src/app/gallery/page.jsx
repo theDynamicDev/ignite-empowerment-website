@@ -2,7 +2,7 @@ import Gallery from "./components/Gallery"
 import { client } from "../../lib/sanity.client";
 import groq from "groq";
 
-export const query = groq`*[_type=='gallery'] { 
+const query = groq`*[_type=='gallery'] { 
     ...,
     image {
         asset->
