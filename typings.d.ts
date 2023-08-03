@@ -28,6 +28,14 @@ interface Image {
   asset: Reference
 }
 
+interface GalleryImage extends Base {
+  _type: 'image'
+  image: Image
+  name: string
+  title: Title
+  asset: Reference
+}
+
 interface Reference {
   _ref: string
   _type: 'reference'

@@ -1,4 +1,5 @@
 import {createClient} from '@sanity/client'
+
 import type {SanityClient} from '@sanity/client'
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
@@ -25,3 +26,4 @@ export default function getClient({preview}: {preview?: {token: string}}): Sanit
   }
   return client
 }
+

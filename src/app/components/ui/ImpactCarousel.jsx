@@ -6,42 +6,10 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 import {Text} from '@nextui-org/react'
 
-import BlogList from '../sanityBlog/BlogList'
 import {ArrowUpRightIcon} from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import urlFor from '../../../lib/urlFor'
 
-// Sample data
-const events = [
-  {
-    id: 1,
-    imgSrc: '/public/images/college-ready.png',
-    summary:
-      ' lorem ipsum okw dfadfnh ahop h haowhf oagahguh hfaghaoghapoifghpaoihg apwouhg apoghaghoighhgaeaiughaiuh  gahifuh asfoihfhoi hfodsihf oahahaoihf aop',
-    date: 'Event 1 date...',
-  },
-  {
-    id: 2,
-    imgSrc: '/public/images/flame-black-bg.png',
-    summary:
-      ' lorem ipsum okw dfadfnh ahop h haowhf oagahguh hfaghaoghapoifghpaoihg apwouhg apoghaghoighhgaeaiughaiuh  gahifuh asfoihfhoi hfodsihf oahahaoihf aop',
-    date: 'Event 1 date...',
-  },
-  {
-    id: 3,
-    imgSrc: '/public/images/college-ready.png',
-    summary:
-      ' lorem ipsum okw dfadfnh ahop h haowhf oagahguh hfaghaoghapoifghpaoihg apwouhg apoghaghoighhgaeaiughaiuh  gahifuh asfoihfhoi hfodsihf oahahaoihf aop',
-    date: 'Event 1 date...',
-  },
-  {
-    id: 4,
-    imgSrc: '/public/images/hero3.png',
-    summary:
-      ' lorem ipsum okw dfadfnh ahop h haowhf oagahguh hfaghaoghapoifghpaoihg apwouhg apoghaghoighhgaeaiughaiuh  gahifuh asfoihfhoi hfodsihf oahahaoihf aop',
-    date: 'Event 1 date...',
-  },
-]
 
 export default function ImpactCarousel({posts}) {
   const sliderRef = useRef()
